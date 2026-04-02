@@ -1,0 +1,5 @@
+{
+  "category.fishclient": "Fish Client",
+  "key.fishclient.open_menu": "Open Fish Client",
+  "key.fishclient.reload_modules": "Reload External Modules"
+}

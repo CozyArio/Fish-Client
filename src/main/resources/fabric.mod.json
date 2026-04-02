@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "fishclient",
+  "version": "${version}",
+  "name": "Fish Client",
+  "description": "Utility client core for Minecraft 1.21 with extensible modules.",
+  "authors": [
+    "Fish Client Team"
+  ],
+  "license": "All-Rights-Reserved",
+  "icon": "assets/fishclient/textures/logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.fishclient.FishClient"
+    ],
+    "client": [
+      "com.fishclient.client.FishClientClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

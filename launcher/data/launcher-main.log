@@ -1,0 +1,9 @@
+[2026-04-02T20:23:53.721Z] launch-profile: profile=fish-main workdir=C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client cmd="C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client\"C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client\gradlew.bat"" runClient --daemon
+[2026-04-02T20:23:53.729Z] launch-profile: spawned pid=20256
+[2026-04-02T20:27:08.832Z] launch-profile: profile=fish-main workdir=C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client cmd="C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client\gradlew.bat" runClient --daemon
+[2026-04-02T20:27:08.840Z] launch-profile: spawned pid=16452
+[2026-04-02T20:33:44.870Z] launch-profile: profile=fish-main workdir=C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client cmd="C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client\gradlew.bat" runClient --daemon
+[2026-04-02T20:33:44.876Z] launch-profile: spawned pid=35420
+[2026-04-02T20:54:43.549Z] launch-profile: profile=fish-main workdir=C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client cmd="C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client\gradlew.bat" runClient --daemon
+[2026-04-02T20:54:43.550Z] launch-profile: cmd=call "C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client\gradlew.bat" runClient --daemon >> "C:\Users\motyl\Documents\AI CODING PEHNIS\Fish Client\launcher\data\launch-last.log" 2>&1
+[2026-04-02T20:54:43.557Z] launch-profile: spawned pid=6200

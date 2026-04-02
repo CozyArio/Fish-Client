@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fish Launcher</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app" class="window">
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+    <div class="grain"></div>
+
+    <header class="titlebar" id="titlebar">
+      <div class="title-left">
+        <div class="brand-badge">F</div>
+        <div class="title-chip" id="accountChip"></div>
+        <div class="title-chip" id="profileChip"></div>
+      </div>
+      <div class="title-center" id="sparkWrap">✦ ✦ ✦</div>
+      <div class="title-right">
+        <button class="win-btn" data-win="minimize">—</button>
+        <button class="win-btn" data-win="maximize">▢</button>
+        <button class="win-btn win-close" data-win="close">✕</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <button class="side-btn active" data-tab="home" title="Home">⌂</button>
+        <button class="side-btn" data-tab="mods" title="Mods">⚙</button>
+        <button class="side-btn" data-tab="settings" title="Settings">⚑</button>
+        <button class="side-btn" data-tab="account" title="Account">🐟</button>
+        <div class="side-spacer"></div>
+        <button class="side-btn" id="openFolderBtn" title="Open Project Folder">📁</button>
+      </aside>
+
+      <section class="content">
+        <section id="homeTab" class="tab-panel active">
+          <div class="hero-shell">
+            <article class="hero-card" id="heroCard">
+              <div class="hero-overlay"></div>
+              <div class="hero-particles" id="heroParticles"></div>
+
+              <div class="hero-main">
+                <div class="hero-kicker" id="heroKicker">Selected Profile</div>
+                <h1 class="hero-title" id="heroTitle">Minecraft 1.21.11</h1>
+                <p class="hero-sub" id="heroSub">Stable channel</p>
+                <div class="hero-meta" id="heroMeta">Fabric • Java 21 • Fish Client</div>
+              </div>
+
+              <div class="hero-actions">
+                <button id="playBtn" class="launch-btn">Launch</button>
+                <button id="openHomeLinkBtn" class="ghost-btn hero-link-btn">Website</button>
+              </div>
+            </article>
+
+            <aside class="hero-side">
+              <div class="mini-stat">
+                <span>Last Launch</span>
+                <strong id="lastLaunchText">Never</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Installed Mods</span>
+                <strong id="modsCountText">0</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Runtime</span>
+                <strong id="runtimeText">Java Auto</strong>
+              </div>
+            </aside>
+          </div>
+
+          <div class="section-row">
+            <h3>Profiles</h3>
+            <span id="profilesCount" class="counter-pill">0</span>
+          </div>
+          <div class="grid-cards" id="versionGrid"></div>
+
+          <div class="recent-panel">
+            <div class="section-row">
+              <h3>Recent Launches</h3>
+              <button id="clearRecentBtn" class="text-btn">Clear</button>
+            </div>
+            <div id="recentList" class="recent-list"></div>
+          </div>
+        </section>
+
+        <section id="modsTab" class="tab-panel">
+          <div class="panel-header-row">
+            <h2>Modpack Manager</h2>
+            <button id="reloadModsBtn" class="ghost-btn">Reload Local Mods</button>
+          </div>
+          <div id="modsList" class="mods-list"></div>
+        </section>
+
+        <section id="settingsTab" class="tab-panel">
+          <div class="panel-header-row">
+            <h2>Launcher Settings</h2>
+          </div>
+          <div class="settings-grid">
+            <label>
+              <span>Launch command template</span>
+              <input id="launchCommandInput" type="text" />
+            </label>
+            <label>
+              <span>Selected version</span>
+              <input id="selectedVersionInput" type="text" />
+            </label>
+            <div class="settings-actions">
+              <button id="saveSettingsBtn" class="ghost-btn">Save</button>
+              <button id="openConfigBtn" class="ghost-btn">Open Config Folder</button>
+              <button id="supportBtn" class="ghost-btn">Discord</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="accountTab" class="tab-panel">
+          <div class="panel-header-row">
+            <h2>Account</h2>
+          </div>
+          <div class="account-card" id="accountCard">
+            <div class="account-main">
+              <div class="account-avatar" id="accountAvatar">🐟</div>
+              <div class="account-meta">
+                <h3 id="accountName">Not logged in</h3>
+                <p id="accountRank">Rank: -</p>
+                <p id="accountSub">Subscription: -</p>
+                <p id="accountStatus">Status: Offline</p>
+              </div>
+            </div>
+            <div class="account-actions">
+              <button id="logoutBtn" class="ghost-btn danger-btn">Logout</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="statusbar">
+      <span id="statusText">Ready.</span>
+    </footer>
+
+    <div id="loginGate" class="login-gate hidden">
+      <div class="login-card">
+        <div class="login-brand">🐟 Fish Launcher</div>
+        <h2>Sign In</h2>
+        <p>No email needed. Use your launcher account credentials.</p>
+        <form id="loginForm" class="login-form" autocomplete="off">
+          <label>
+            <span>Username</span>
+            <input id="loginUsername" type="text" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input id="loginPassword" type="password" required />
+          </label>
+          <button id="loginSubmit" class="launch-btn" type="submit">Login</button>
+          <div id="loginError" class="login-error"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>

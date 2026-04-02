@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fish Client Cloud Panel</title>
+<style>
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Segoe UI,system-ui,sans-serif;background:#0c0c10;color:#fff;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #2a2a38;background:#101014}.logo{color:#aa55ff;font-weight:700}.status{margin-left:auto;color:#888;font-size:12px}
+.main{display:flex;flex:1;min-height:0}nav{width:140px;background:#0a0a0e;border-right:1px solid #2a2a38;overflow:auto}.cat{padding:9px 12px;color:#777;cursor:pointer;border-left:2px solid transparent}.cat:hover{background:#18181e;color:#aaa}.cat.active{color:#aa55ff;background:#1a1025;border-left-color:#aa55ff}
+.content{flex:1;display:flex;flex-direction:column;min-width:0}.top{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-bottom:1px solid #2a2a38}.search{width:220px;background:#141418;border:1px solid #2a2a38;border-radius:6px;color:#fff;padding:6px 8px}
+.list{padding:8px;display:flex;flex-direction:column;gap:6px;overflow:auto;flex:1}.row{height:40px;background:#18181e;border-left:3px solid transparent;border-radius:7px;padding:0 10px;display:flex;align-items:center;gap:8px}.row:hover{background:#1e1e26}.row.on{background:#1a1025;border-left-color:#aa55ff}.name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#aaa}.row.on .name{color:#fff}
+.gear{border:0;background:transparent;color:#777;cursor:pointer;font-size:14px}.gear:hover{color:#aa55ff}
+.tg{width:30px;height:15px;border-radius:8px;background:#333340;position:relative;cursor:pointer}.tg.on{background:#9955ee}.kn{width:11px;height:11px;border-radius:50%;background:#fff;position:absolute;top:2px;left:2px;transition:left .15s}.tg.on .kn{left:17px}
+.set{width:300px;background:#101014;border-left:1px solid #2a2a38;display:none;flex-direction:column}.set.open{display:flex}.set-h{padding:10px;border-bottom:1px solid #2a2a38;display:flex;gap:10px;align-items:center}.back{border:0;background:transparent;color:#aa55ff;cursor:pointer}.set-b{overflow:auto;flex:1}
+.item{padding:10px;border-bottom:1px solid #2a2a38}.lbl{font-size:11px;color:#888;margin-bottom:6px}.txt{width:100%;background:#141418;border:1px solid #2a2a38;color:#fff;padding:6px;border-radius:5px}
+.note{padding:10px 14px;font-size:12px;color:#999;border-top:1px solid #2a2a38}.warn{color:#ff9a66}
+</style>
+</head>
+<body>
+<header><div class="logo">Fish Client</div><div>Cloud Panel</div><div id="status" class="status">Disconnected</div></header>
+<div class="main">
+  <nav id="nav"></nav>
+  <div class="content">
+    <div class="top"><div id="title">-</div><input id="search" class="search" placeholder="Search modules..." /></div>
+    <div id="list" class="list"></div>
+  </div>
+  <aside id="settings" class="set">
+    <div class="set-h"><button id="back" class="back">&lt; Back</button><div id="setTitle">Settings</div></div>
+    <div id="setBody" class="set-b"></div>
+  </aside>
+</div>
+<div class="note">
+Type <b>.cloud</b> in Minecraft first. This page uses <b>ws://127.0.0.1:9157</b> (fallback: localhost).
+<span id="httpsWarn" class="warn" style="display:none"> You are on HTTPS, which may block ws:// localhost.</span>
+</div>
+<script>
+let ws=null,mods=[],cat='',query='',openMod=null;const CATS=['World','Movement','Combat','Macros','Keybinds','Theme'];
+const WS_CANDIDATES=['ws://127.0.0.1:9157','ws://localhost:9157'];
+let wsCandidateIndex=0;
+if(location.protocol==='https:')document.getElementById('httpsWarn').style.display='inline';
+function connect(){
+  try{
+    const target=WS_CANDIDATES[wsCandidateIndex%WS_CANDIDATES.length];
+    setStatus('Connecting '+target+' ...');
+    ws=new WebSocket(target);
+    ws.onopen=()=>{
+      setStatus('Connected '+target);
+    };
+    ws.onclose=()=>{
+      wsCandidateIndex++;
+      setStatus('Reconnecting...');
+      setTimeout(connect,2000);
+    };
+    ws.onerror=()=>ws.close();
+    ws.onmessage=e=>{
+      const d=JSON.parse(e.data);
+      if(d.action==='state'){
+        mods=d.modules||[];
+        if(!cat&&mods.length)cat=mods[0].category;
+        render();
+        if(openMod){openMod=mods.find(m=>m.name===openMod.name)||null;renderSettings();}
+      }
+    };
+  }catch{
+    wsCandidateIndex++;
+    setTimeout(connect,2000);
+  }
+}
+function setStatus(t){document.getElementById('status').textContent=t}
+function send(obj){if(ws&&ws.readyState===1)ws.send(JSON.stringify(obj))}
+function esc(s){return String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')}
+function render(){const present=[...new Set(mods.map(m=>m.category))];const cats=CATS.filter(c=>present.includes(c));const nav=document.getElementById('nav');nav.innerHTML=cats.map(c=>`<div class="cat ${c===cat?'active':''}" data-cat="${esc(c)}">${esc(c)}</div>`).join('');nav.querySelectorAll('.cat').forEach(el=>el.onclick=()=>{cat=el.dataset.cat;openMod=null;render()});document.getElementById('title').textContent=cat||'-';const list=document.getElementById('list');const view=mods.filter(m=>m.category===cat&&m.name.toLowerCase().includes(query.toLowerCase()));list.innerHTML=view.map(m=>`<div class="row ${m.enabled?'on':''}" data-name="${esc(m.name)}"><div class="name">${esc(m.name)}</div>${(m.settings||[]).length?'<button class="gear">*</button>':''}<div class="tg ${m.enabled?'on':''}"><div class="kn"></div></div></div>`).join('');list.querySelectorAll('.row').forEach(row=>{const name=row.dataset.name;row.onclick=()=>send({action:'toggle',module:name});const gear=row.querySelector('.gear');if(gear){gear.onclick=e=>{e.stopPropagation();openMod=mods.find(m=>m.name===name)||null;renderSettings();}};});document.getElementById('settings').classList.toggle('open',!!openMod)}
+function renderSettings(){const panel=document.getElementById('settings');const body=document.getElementById('setBody');if(!openMod){panel.classList.remove('open');body.innerHTML='';return;}panel.classList.add('open');document.getElementById('setTitle').textContent=openMod.name;body.innerHTML=(openMod.settings||[]).map((s,i)=>{if(s.type==='TOGGLE')return `<div class="item"><div class="lbl">${esc(s.label)}</div><label><input data-i="${i}" type="checkbox" ${s.value?'checked':''}/> Enabled</label></div>`;if(s.type==='SLIDER')return `<div class="item"><div class="lbl">${esc(s.label)}: <span id="v${i}">${esc(s.value)}</span></div><input data-i="${i}" type="range" min="${s.min}" max="${s.max}" step="${s.step}" value="${s.value}"/></div>`;if(s.type==='SELECT'){const opts=(s.options||[]).map((o,ix)=>`<option value="${ix}" ${ix===s.value?'selected':''}>${esc(o)}</option>`).join('');return `<div class="item"><div class="lbl">${esc(s.label)}</div><select class="txt" data-i="${i}">${opts}</select></div>`;}return `<div class="item"><div class="lbl">${esc(s.label)}</div><input class="txt" data-i="${i}" value="${esc(s.value)}"/></div>`;}).join('');body.querySelectorAll('input[type=checkbox]').forEach(el=>el.onchange=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:el.checked});});body.querySelectorAll('input[type=range]').forEach(el=>el.oninput=()=>{const i=+el.dataset.i;const s=openMod.settings[i];const v=parseFloat(el.value);const lab=document.getElementById('v'+i);if(lab)lab.textContent=v;send({action:'setSetting',module:openMod.name,setting:s.label,value:v});});body.querySelectorAll('select').forEach(el=>el.onchange=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:parseInt(el.value,10)});});body.querySelectorAll('input.txt').forEach(el=>el.oninput=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:el.value});});}
+document.getElementById('search').addEventListener('input',e=>{query=e.target.value;render()});document.getElementById('back').onclick=()=>{openMod=null;renderSettings()};
+connect();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "fish-client-launcher",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Custom desktop launcher for Fish Client",
+  "main": "src/main.js",
+  "author": "Fish Client Team",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "lint": "echo 'No lint configured'"
+  },
+  "devDependencies": {
+    "electron": "^37.2.3"
+  }
+}

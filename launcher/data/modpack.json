@@ -1,0 +1,19 @@
+{
+  "profileId": "fish-main",
+  "mods": [
+    {
+      "id": "fabric-api",
+      "name": "Fabric API",
+      "version": "0.139.4+1.21.11",
+      "enabled": true,
+      "source": "builtin"
+    },
+    {
+      "id": "fish-client",
+      "name": "Fish Client Core",
+      "version": "1.1.0",
+      "enabled": true,
+      "source": "local"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "launcherName": "Fish Launcher",
+  "user": {
+    "displayName": "CozyArio"
+  },
+  "profiles": [
+    {
+      "id": "fish-main",
+      "name": "Fish Client 1.21.11",
+      "branch": "Stable",
+      "image": "assets/bg-main.jpg",
+      "gameVersion": "1.21.11",
+      "loader": "Fabric",
+      "javaPath": "",
+      "gameDir": "",
+      "jvmArgs": "-Xmx4G",
+      "launchCommandTemplate": "gradlew.bat runClient --daemon"
+    }
+  ],
+  "quickLinks": {
+    "home": "https://github.com",
+    "support": "https://discord.com",
+    "updates": "https://github.com"
+  },
+  "accounts": [
+    {
+      "id": "admin-ari",
+      "username": "Ari",
+      "displayName": "Ari",
+      "passwordHash": "6c9fb2eb7ccf62004b11686635dc3758d76650aae9f289dd733a405c921fad2e",
+      "rankName": "Fish",
+      "rankIcon": "🐟",
+      "subscriptionType": "Lifetime",
+      "expiresAt": null
+    }
+  ]
+}
