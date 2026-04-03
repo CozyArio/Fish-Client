@@ -1,36 +1,27 @@
 # Fish Client
 
-Fish Client is a Fabric-based Minecraft client for **1.21.11** with custom modules, ClickGUI, HUD/ESP features, config management, and launcher tooling.
+Fish Client is a Fabric mod/client for Minecraft **1.21.11**.
 
-## Quick Start
+## Install (Recommended)
+1. Download the latest jar from [GitHub Releases](https://github.com/CozyArio/Fish-Client/releases).
+2. Install Fabric Loader for Minecraft `1.21.11`.
+3. Put `fishclient-*.jar` into your `.minecraft/mods` folder.
+4. Make sure Fabric API for `1.21.11` is also in `.minecraft/mods`.
+5. Launch the Fabric profile.
 
-### Option A: Official Minecraft Launcher (recommended)
-1. Run `install-official-launcher.bat`.
-2. Open official Minecraft Launcher.
-3. Select profile `Fish Client 1.21.11` and click Play.
-
-Full guide: [OFFICIAL_LAUNCHER_SETUP.md](OFFICIAL_LAUNCHER_SETUP.md)
-
-### Option B: Manual install (mods folder)
-1. Build jar:
-   - `./gradlew remapJar`
-2. Copy output jar from:
-   - `build/libs/fishclient-1.1.0.jar`
-3. Put it in your `.minecraft/mods` folder with matching Fabric + Fabric API.
-
-## Development
-
+## Build From Source
 ### Requirements
 - Java 21
 - Gradle Wrapper (`gradlew` / `gradlew.bat`)
 
-### Build
-- `./gradlew remapJar`
+### Commands
+- Build jar: `./gradlew remapJar`
+- Run dev client: `./gradlew runClient`
 
-### Run dev client
-- `./gradlew runClient`
+Build output:
+- `build/libs/fishclient-1.1.0.jar`
 
-## Included Systems
+## Features
 - ClickGUI with module categories and settings
 - HUD + ArrayList overlay
 - Runtime gameplay modules (movement/combat/world/render)
@@ -39,14 +30,8 @@ Full guide: [OFFICIAL_LAUNCHER_SETUP.md](OFFICIAL_LAUNCHER_SETUP.md)
 - Discord RPC integration
 - Render mixins (including first-person item scale module)
 
-## Project Docs
-- Setup with official launcher: [OFFICIAL_LAUNCHER_SETUP.md](OFFICIAL_LAUNCHER_SETUP.md)
+## Docs
 - Add more modules: [ADDING_MODULES.md](ADDING_MODULES.md)
-- Electron launcher docs: [launcher/README.md](launcher/README.md)
-
-## Release
-Latest release page:
-- [GitHub Releases](https://github.com/CozyArio/Fish-Client/releases)
 
 ## License
 No license file is currently defined in this repository.
