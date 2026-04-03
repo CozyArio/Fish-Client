@@ -15,6 +15,20 @@ header{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:
 .set{width:300px;background:#101014;border-left:1px solid #2a2a38;display:none;flex-direction:column}.set.open{display:flex}.set-h{padding:10px;border-bottom:1px solid #2a2a38;display:flex;gap:10px;align-items:center}.back{border:0;background:transparent;color:#aa55ff;cursor:pointer}.set-b{overflow:auto;flex:1}
 .item{padding:10px;border-bottom:1px solid #2a2a38}.lbl{font-size:11px;color:#888;margin-bottom:6px}.txt{width:100%;background:#141418;border:1px solid #2a2a38;color:#fff;padding:6px;border-radius:5px}
 .note{padding:10px 14px;font-size:12px;color:#999;border-top:1px solid #2a2a38}.warn{color:#ff9a66}
+
+.alt-board{display:none;padding:10px;overflow:auto;flex:1;gap:10px;grid-template-columns:1fr 1fr;align-content:start}
+.alt-board.show{display:grid}
+.alt-card{border:1px solid #2a2a38;background:#14141b;border-radius:10px;padding:10px}
+.alt-card h3{margin:0 0 10px;font-size:14px;color:#dedff0}
+.alt-current{display:flex;gap:10px;align-items:center}.alt-icon{width:42px;height:42px;border-radius:10px;border:1px solid rgba(170,85,255,.5);display:grid;place-items:center;background:rgba(170,85,255,.12);font-size:22px}
+.alt-meta strong{display:block;font-size:16px}.alt-meta span{display:block;color:#a4a7bc;font-size:12px;margin-top:2px}
+.alt-form{display:grid;gap:8px}.alt-form label{display:grid;gap:4px;color:#a4a7bc;font-size:12px}.alt-form input,.alt-form select{width:100%;background:#12121a;border:1px solid #2a2a38;color:#fff;padding:7px;border-radius:6px}
+.alt-form button{border:1px solid #7f3dd3;background:linear-gradient(135deg,rgba(170,85,255,.32),rgba(74,58,140,.35));color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
+.alt-list{display:grid;gap:7px;max-height:260px;overflow:auto}.alt-item{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#181820;border:1px solid #2a2a38;border-radius:8px;padding:8px}.alt-item.active{border-color:#aa55ff;box-shadow:inset 0 0 0 1px rgba(170,85,255,.22)}
+.alt-item-meta{min-width:0}.alt-item-meta strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.alt-item-meta span{display:block;color:#9ea2b7;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.alt-actions{display:flex;gap:6px}.alt-actions button{border:1px solid #2a2a38;background:#14141b;color:#ececff;padding:5px 8px;border-radius:6px;cursor:pointer;font-size:11px}
+.alt-actions button:hover{border-color:#aa55ff}.alt-empty{color:#8e92a8;border:1px dashed #2a2a38;border-radius:8px;padding:12px;text-align:center}
+@media (max-width:940px){.alt-board.show{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -24,6 +38,7 @@ header{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:
   <div class="content">
     <div class="top"><div id="title">-</div><input id="search" class="search" placeholder="Search modules..." /></div>
     <div id="list" class="list"></div>
+    <div id="altsBoard" class="alt-board"></div>
   </div>
   <aside id="settings" class="set">
     <div class="set-h"><button id="back" class="back">&lt; Back</button><div id="setTitle">Settings</div></div>
@@ -36,22 +51,45 @@ Type <b>.cloud</b> in Minecraft first. This page uses <b>ws://127.0.0.1:9157</b>
 </div>
 <script>
 let ws=null,mods=[],cat='',query='',openMod=null;const CATS=['World','Movement','Combat','Macros','Keybinds','Theme'];
+const EXTRA_CATS=['Alts'];
 const WS_CANDIDATES=['ws://127.0.0.1:9157','ws://localhost:9157'];
+const WEB_ALTS_KEY='fish_panel_alts_v1';
 let wsCandidateIndex=0;
+let webAlts=[];
+let selectedWebAltId='';
 if(location.protocol==='https:')document.getElementById('httpsWarn').style.display='inline';
+
+function loadWebAlts(){
+  try{
+    const raw=localStorage.getItem(WEB_ALTS_KEY);
+    const parsed=raw?JSON.parse(raw):[];
+    webAlts=Array.isArray(parsed)?parsed:[];
+  }catch{webAlts=[];}
+  if(!webAlts.length){
+    webAlts=[{id:'web-alt-ari',username:'Ari',type:'offline',note:'Primary web alt',rankIcon:'🐟'}];
+  }
+  if(!webAlts.some(a=>a.id===selectedWebAltId))selectedWebAltId=webAlts[0].id;
+}
+
+function saveWebAlts(){
+  localStorage.setItem(WEB_ALTS_KEY,JSON.stringify(webAlts));
+}
+
+function cleanUsername(name){
+  return String(name||'').replace(/[^A-Za-z0-9_]/g,'').slice(0,16);
+}
+
+function selectedWebAlt(){
+  return webAlts.find(a=>a.id===selectedWebAltId)||webAlts[0]||null;
+}
+
 function connect(){
   try{
     const target=WS_CANDIDATES[wsCandidateIndex%WS_CANDIDATES.length];
     setStatus('Connecting '+target+' ...');
     ws=new WebSocket(target);
-    ws.onopen=()=>{
-      setStatus('Connected '+target);
-    };
-    ws.onclose=()=>{
-      wsCandidateIndex++;
-      setStatus('Reconnecting...');
-      setTimeout(connect,2000);
-    };
+    ws.onopen=()=>{setStatus('Connected '+target)};
+    ws.onclose=()=>{wsCandidateIndex++;setStatus('Reconnecting...');setTimeout(connect,2000)};
     ws.onerror=()=>ws.close();
     ws.onmessage=e=>{
       const d=JSON.parse(e.data);
@@ -67,12 +105,170 @@ function connect(){
     setTimeout(connect,2000);
   }
 }
+
 function setStatus(t){document.getElementById('status').textContent=t}
 function send(obj){if(ws&&ws.readyState===1)ws.send(JSON.stringify(obj))}
 function esc(s){return String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;')}
-function render(){const present=[...new Set(mods.map(m=>m.category))];const cats=CATS.filter(c=>present.includes(c));const nav=document.getElementById('nav');nav.innerHTML=cats.map(c=>`<div class="cat ${c===cat?'active':''}" data-cat="${esc(c)}">${esc(c)}</div>`).join('');nav.querySelectorAll('.cat').forEach(el=>el.onclick=()=>{cat=el.dataset.cat;openMod=null;render()});document.getElementById('title').textContent=cat||'-';const list=document.getElementById('list');const view=mods.filter(m=>m.category===cat&&m.name.toLowerCase().includes(query.toLowerCase()));list.innerHTML=view.map(m=>`<div class="row ${m.enabled?'on':''}" data-name="${esc(m.name)}"><div class="name">${esc(m.name)}</div>${(m.settings||[]).length?'<button class="gear">*</button>':''}<div class="tg ${m.enabled?'on':''}"><div class="kn"></div></div></div>`).join('');list.querySelectorAll('.row').forEach(row=>{const name=row.dataset.name;row.onclick=()=>send({action:'toggle',module:name});const gear=row.querySelector('.gear');if(gear){gear.onclick=e=>{e.stopPropagation();openMod=mods.find(m=>m.name===name)||null;renderSettings();}};});document.getElementById('settings').classList.toggle('open',!!openMod)}
-function renderSettings(){const panel=document.getElementById('settings');const body=document.getElementById('setBody');if(!openMod){panel.classList.remove('open');body.innerHTML='';return;}panel.classList.add('open');document.getElementById('setTitle').textContent=openMod.name;body.innerHTML=(openMod.settings||[]).map((s,i)=>{if(s.type==='TOGGLE')return `<div class="item"><div class="lbl">${esc(s.label)}</div><label><input data-i="${i}" type="checkbox" ${s.value?'checked':''}/> Enabled</label></div>`;if(s.type==='SLIDER')return `<div class="item"><div class="lbl">${esc(s.label)}: <span id="v${i}">${esc(s.value)}</span></div><input data-i="${i}" type="range" min="${s.min}" max="${s.max}" step="${s.step}" value="${s.value}"/></div>`;if(s.type==='SELECT'){const opts=(s.options||[]).map((o,ix)=>`<option value="${ix}" ${ix===s.value?'selected':''}>${esc(o)}</option>`).join('');return `<div class="item"><div class="lbl">${esc(s.label)}</div><select class="txt" data-i="${i}">${opts}</select></div>`;}return `<div class="item"><div class="lbl">${esc(s.label)}</div><input class="txt" data-i="${i}" value="${esc(s.value)}"/></div>`;}).join('');body.querySelectorAll('input[type=checkbox]').forEach(el=>el.onchange=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:el.checked});});body.querySelectorAll('input[type=range]').forEach(el=>el.oninput=()=>{const i=+el.dataset.i;const s=openMod.settings[i];const v=parseFloat(el.value);const lab=document.getElementById('v'+i);if(lab)lab.textContent=v;send({action:'setSetting',module:openMod.name,setting:s.label,value:v});});body.querySelectorAll('select').forEach(el=>el.onchange=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:parseInt(el.value,10)});});body.querySelectorAll('input.txt').forEach(el=>el.oninput=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:el.value});});}
-document.getElementById('search').addEventListener('input',e=>{query=e.target.value;render()});document.getElementById('back').onclick=()=>{openMod=null;renderSettings()};
+
+function render(){
+  const present=[...new Set(mods.map(m=>m.category))];
+  const cats=[...CATS.filter(c=>present.includes(c)),...EXTRA_CATS];
+  if(!cat&&cats.length)cat=cats[0];
+  if(!cats.includes(cat))cat=cats[0]||'Alts';
+
+  const nav=document.getElementById('nav');
+  nav.innerHTML=cats.map(c=>`<div class="cat ${c===cat?'active':''}" data-cat="${esc(c)}">${esc(c)}</div>`).join('');
+  nav.querySelectorAll('.cat').forEach(el=>el.onclick=()=>{cat=el.dataset.cat;openMod=null;render()});
+
+  const title=document.getElementById('title');
+  const search=document.getElementById('search');
+  const list=document.getElementById('list');
+  const altsBoard=document.getElementById('altsBoard');
+
+  if(cat==='Alts'){
+    title.textContent='Alt Manager (Web Panel)';
+    search.style.display='none';
+    list.style.display='none';
+    altsBoard.classList.add('show');
+    document.getElementById('settings').classList.remove('open');
+    renderAltsBoard();
+    return;
+  }
+
+  search.style.display='block';
+  list.style.display='flex';
+  altsBoard.classList.remove('show');
+
+  title.textContent=cat||'-';
+  const view=mods.filter(m=>m.category===cat&&m.name.toLowerCase().includes(query.toLowerCase()));
+  list.innerHTML=view.map(m=>`<div class="row ${m.enabled?'on':''}" data-name="${esc(m.name)}"><div class="name">${esc(m.name)}</div>${(m.settings||[]).length?'<button class="gear">&#9881;</button>':''}<div class="tg ${m.enabled?'on':''}"><div class="kn"></div></div></div>`).join('');
+  list.querySelectorAll('.row').forEach(row=>{
+    const name=row.dataset.name;
+    row.onclick=()=>send({action:'toggle',module:name});
+    const gear=row.querySelector('.gear');
+    if(gear){
+      gear.onclick=e=>{
+        e.stopPropagation();
+        openMod=mods.find(m=>m.name===name)||null;
+        renderSettings();
+      };
+    }
+  });
+  document.getElementById('settings').classList.toggle('open',!!openMod);
+}
+
+function renderAltsBoard(){
+  const altsBoard=document.getElementById('altsBoard');
+  const active=selectedWebAlt();
+  altsBoard.innerHTML=`
+    <div class="alt-card">
+      <h3>Selected Alt</h3>
+      <div class="alt-current">
+        <div class="alt-icon">${esc(active?active.rankIcon:'🐟')}</div>
+        <div class="alt-meta">
+          <strong>${esc(active?active.username:'None')}</strong>
+          <span>${esc(active?(active.type==='login'?'Login Profile':'Cracked / Offline'):'No alt selected')}</span>
+          <span>${esc(active&&active.note?active.note:'Local web alt manager')}</span>
+        </div>
+      </div>
+    </div>
+    <div class="alt-card">
+      <h3>Add Alt</h3>
+      <form id="webAltForm" class="alt-form" autocomplete="off">
+        <label>Username<input id="webAltUsername" maxlength="16" required /></label>
+        <label>Type<select id="webAltType"><option value="offline">Cracked / Offline</option><option value="login">Login Profile</option></select></label>
+        <label>Note<input id="webAltNote" maxlength="48" /></label>
+        <button type="submit">Add Alt</button>
+      </form>
+    </div>
+    <div class="alt-card" style="grid-column:1/-1">
+      <h3>Saved Alts</h3>
+      <div id="webAltList" class="alt-list"></div>
+    </div>
+  `;
+
+  const list=altsBoard.querySelector('#webAltList');
+  if(!webAlts.length){
+    list.innerHTML='<div class="alt-empty">No alts saved.</div>';
+  }else{
+    list.innerHTML=webAlts.map(alt=>`
+      <div class="alt-item ${alt.id===selectedWebAltId?'active':''}">
+        <div class="alt-item-meta">
+          <strong>${esc(alt.rankIcon||'🐟')} ${esc(alt.username)}</strong>
+          <span>${esc(alt.type==='login'?'Login Profile':'Cracked / Offline')}${alt.note?` • ${esc(alt.note)}`:''}</span>
+        </div>
+        <div class="alt-actions">
+          <button data-action="use" data-id="${esc(alt.id)}">Use</button>
+          <button data-action="del" data-id="${esc(alt.id)}">Remove</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  const form=altsBoard.querySelector('#webAltForm');
+  form.onsubmit=(event)=>{
+    event.preventDefault();
+    const username=cleanUsername(altsBoard.querySelector('#webAltUsername').value);
+    const type=altsBoard.querySelector('#webAltType').value==='login'?'login':'offline';
+    const note=String(altsBoard.querySelector('#webAltNote').value||'').trim().slice(0,48);
+    if(username.length<3){setStatus('Alt username must be at least 3 chars.');return;}
+    if(webAlts.some(a=>a.username.toLowerCase()===username.toLowerCase())){setStatus('Alt already exists.');return;}
+    const id=`web-alt-${username.toLowerCase()}-${Date.now()}`;
+    webAlts.push({id,username,type,note,rankIcon:'🐟'});
+    selectedWebAltId=id;
+    saveWebAlts();
+    setStatus('Added web alt: '+username);
+    renderAltsBoard();
+  };
+
+  altsBoard.querySelectorAll('button[data-action]').forEach(btn=>{
+    btn.onclick=()=>{
+      const id=btn.dataset.id;
+      if(btn.dataset.action==='use'){
+        selectedWebAltId=id;
+        saveWebAlts();
+        setStatus('Selected web alt updated.');
+        renderAltsBoard();
+        return;
+      }
+      if(btn.dataset.action==='del'){
+        if(webAlts.length<=1){setStatus('Keep at least one web alt.');return;}
+        webAlts=webAlts.filter(a=>a.id!==id);
+        if(!webAlts.some(a=>a.id===selectedWebAltId))selectedWebAltId=webAlts[0].id;
+        saveWebAlts();
+        setStatus('Removed web alt.');
+        renderAltsBoard();
+      }
+    };
+  });
+}
+
+function renderSettings(){
+  const panel=document.getElementById('settings');
+  const body=document.getElementById('setBody');
+  if(!openMod){panel.classList.remove('open');body.innerHTML='';return;}
+  panel.classList.add('open');
+  document.getElementById('setTitle').textContent=openMod.name;
+  body.innerHTML=(openMod.settings||[]).map((s,i)=>{
+    if(s.type==='TOGGLE')return `<div class="item"><div class="lbl">${esc(s.label)}</div><label><input data-i="${i}" type="checkbox" ${s.value?'checked':''}/> Enabled</label></div>`;
+    if(s.type==='SLIDER')return `<div class="item"><div class="lbl">${esc(s.label)}: <span id="v${i}">${esc(s.value)}</span></div><input data-i="${i}" type="range" min="${s.min}" max="${s.max}" step="${s.step}" value="${s.value}"/></div>`;
+    if(s.type==='SELECT'){
+      const opts=(s.options||[]).map((o,ix)=>`<option value="${ix}" ${ix===s.value?'selected':''}>${esc(o)}</option>`).join('');
+      return `<div class="item"><div class="lbl">${esc(s.label)}</div><select class="txt" data-i="${i}">${opts}</select></div>`;
+    }
+    return `<div class="item"><div class="lbl">${esc(s.label)}</div><input class="txt" data-i="${i}" value="${esc(s.value)}"/></div>`;
+  }).join('');
+
+  body.querySelectorAll('input[type=checkbox]').forEach(el=>el.onchange=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:el.checked});});
+  body.querySelectorAll('input[type=range]').forEach(el=>el.oninput=()=>{const i=+el.dataset.i;const s=openMod.settings[i];const v=parseFloat(el.value);const lab=document.getElementById('v'+i);if(lab)lab.textContent=v;send({action:'setSetting',module:openMod.name,setting:s.label,value:v});});
+  body.querySelectorAll('select').forEach(el=>el.onchange=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:parseInt(el.value,10)});});
+  body.querySelectorAll('input.txt').forEach(el=>el.oninput=()=>{const s=openMod.settings[+el.dataset.i];send({action:'setSetting',module:openMod.name,setting:s.label,value:el.value});});
+}
+
+document.getElementById('search').addEventListener('input',e=>{query=e.target.value;render()});
+document.getElementById('back').onclick=()=>{openMod=null;renderSettings()};
+
+loadWebAlts();
 connect();
 </script>
 </body>

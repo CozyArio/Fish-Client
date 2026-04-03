@@ -12,6 +12,7 @@ base {
 
 repositories {
     mavenCentral()
+    maven { url = 'https://jitpack.io' }
 }
 
 loom {
@@ -33,7 +34,11 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     implementation 'com.google.code.gson:gson:2.10.1'
+    include 'com.google.code.gson:gson:2.10.1'
+
     implementation 'org.java-websocket:Java-WebSocket:1.5.6'
+    include 'org.java-websocket:Java-WebSocket:1.5.6'
+
 }
 
 processResources {

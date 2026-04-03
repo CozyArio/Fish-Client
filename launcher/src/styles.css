@@ -524,12 +524,14 @@ input {
 
 #modsTab,
 #settingsTab,
+#altsTab,
 #accountTab {
   display: none;
 }
 
 #modsTab.active,
 #settingsTab.active,
+#altsTab.active,
 #accountTab.active {
   display: block;
 }
@@ -633,6 +635,8 @@ input {
 }
 
 .settings-grid input,
+.alt-form input,
+.alt-form select,
 .login-form input {
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -642,10 +646,190 @@ input {
 }
 
 .settings-grid input:focus,
+.alt-form input:focus,
+.alt-form select:focus,
 .login-form input:focus {
   outline: none;
   border-color: rgba(211, 94, 255, 0.62);
   box-shadow: 0 0 0 3px rgba(211, 94, 255, 0.16);
+}
+
+.alts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.alt-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel-soft);
+  padding: 14px;
+}
+
+.alt-card-head {
+  font-size: 14px;
+  font-weight: 700;
+  color: #d7d9e9;
+  margin-bottom: 10px;
+}
+
+.current-alt-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.current-alt-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  border: 1px solid rgba(211, 94, 255, 0.52);
+  background: radial-gradient(circle at 30% 20%, rgba(211, 94, 255, 0.26), rgba(22, 25, 38, 0.92));
+}
+
+.current-alt-meta h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.current-alt-meta p {
+  margin: 3px 0;
+  color: #c6cade;
+  font-size: 13px;
+}
+
+.alt-form {
+  display: grid;
+  gap: 10px;
+}
+
+.alt-form label {
+  display: grid;
+  gap: 5px;
+}
+
+.alt-form span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.alt-list-card {
+  min-height: 220px;
+}
+
+.alts-list {
+  display: grid;
+  gap: 8px;
+  max-height: 240px;
+  overflow: auto;
+}
+
+.alt-item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(16, 19, 31, 0.82);
+  padding: 9px 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alt-item.active {
+  border-color: rgba(211, 94, 255, 0.68);
+  box-shadow: inset 0 0 0 1px rgba(211, 94, 255, 0.25);
+}
+
+.alt-item-meta {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.alt-item-meta strong {
+  font-size: 14px;
+}
+
+.alt-item-meta span {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alt-item-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.alt-select-btn,
+.alt-remove-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.alt-list-empty {
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+
+.ms-device-wrap {
+  display: grid;
+  gap: 10px;
+}
+
+.ms-device-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.ms-device-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ms-device-actions .launch-btn {
+  flex: 1 1 auto;
+  min-width: 170px;
+}
+
+.ms-device-code {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: rgba(16, 19, 31, 0.88);
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: #f0e6ff;
+}
+
+.ms-device-link {
+  color: #c6a7ff;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.ms-device-link:hover {
+  text-decoration: underline;
+}
+
+.ms-device-status {
+  min-height: 18px;
+  font-size: 12px;
+  color: #d9dcec;
 }
 
 .settings-actions {
@@ -811,5 +995,9 @@ input {
 
   .title-center {
     display: none;
+  }
+
+  .alts-grid {
+    grid-template-columns: 1fr;
   }
 }

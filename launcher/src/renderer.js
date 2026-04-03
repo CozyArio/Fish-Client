@@ -3,7 +3,17 @@ const state = {
   launcherState: null,
   modpack: null,
   authUser: null,
-  selectedTab: 'home'
+  selectedTab: 'home',
+  msDevice: {
+    sessionId: '',
+    polling: false,
+    timer: null
+  },
+  msWeb: {
+    sessionId: '',
+    polling: false,
+    timer: null
+  }
 };
 
 const el = {};
@@ -37,6 +47,7 @@ async function init() {
 
 function bindElements() {
   el.accountChip = byId('accountChip');
+  el.altChip = byId('altChip');
   el.profileChip = byId('profileChip');
   el.heroCard = byId('heroCard');
   el.heroKicker = byId('heroKicker');
@@ -50,6 +61,10 @@ function bindElements() {
   el.modsList = byId('modsList');
   el.launchCommandInput = byId('launchCommandInput');
   el.selectedVersionInput = byId('selectedVersionInput');
+  el.msClientIdInput = byId('msClientIdInput');
+  el.msTenantInput = byId('msTenantInput');
+  el.msScopeInput = byId('msScopeInput');
+  el.msRedirectInput = byId('msRedirectInput');
   el.saveSettingsBtn = byId('saveSettingsBtn');
   el.openConfigBtn = byId('openConfigBtn');
   el.supportBtn = byId('supportBtn');
@@ -69,6 +84,23 @@ function bindElements() {
   el.accountAvatar = byId('accountAvatar');
   el.logoutBtn = byId('logoutBtn');
 
+  el.selectedAltIcon = byId('selectedAltIcon');
+  el.selectedAltName = byId('selectedAltName');
+  el.selectedAltType = byId('selectedAltType');
+  el.selectedAltNote = byId('selectedAltNote');
+  el.altForm = byId('altForm');
+  el.altUsernameInput = byId('altUsernameInput');
+  el.altTypeInput = byId('altTypeInput');
+  el.altNoteInput = byId('altNoteInput');
+  el.altsList = byId('altsList');
+  el.msDeviceWrap = byId('msDeviceWrap');
+  el.msWebStartBtn = byId('msWebStartBtn');
+  el.msDeviceStartBtn = byId('msDeviceStartBtn');
+  el.msDeviceCancelBtn = byId('msDeviceCancelBtn');
+  el.msDeviceCode = byId('msDeviceCode');
+  el.msDeviceLink = byId('msDeviceLink');
+  el.msDeviceStatus = byId('msDeviceStatus');
+
   el.loginGate = byId('loginGate');
   el.loginForm = byId('loginForm');
   el.loginUsername = byId('loginUsername');
@@ -86,6 +118,10 @@ function bindElements() {
   el.clearRecentBtn.addEventListener('click', clearRecent);
   el.logoutBtn.addEventListener('click', logout);
   el.loginForm.addEventListener('submit', onLoginSubmit);
+  el.altForm.addEventListener('submit', addAltFromForm);
+  el.msWebStartBtn.addEventListener('click', startMicrosoftWebLogin);
+  el.msDeviceStartBtn.addEventListener('click', startMicrosoftDeviceLogin);
+  el.msDeviceCancelBtn.addEventListener('click', cancelMicrosoftDeviceLogin);
 }
 
 function wireWindowButtons() {
@@ -116,6 +152,12 @@ function selectedProfile() {
   return profiles.find((p) => p.id === target) || profiles[0] || null;
 }
 
+function selectedAlt() {
+  const alts = Array.isArray(state.config?.alts) ? state.config.alts : [];
+  const target = state.launcherState?.selectedAltId;
+  return alts.find((alt) => alt.id === target) || alts[0] || null;
+}
+
 function isAuthenticated() {
   return Boolean(state.launcherState?.authSession?.loggedIn && state.authUser);
 }
@@ -125,6 +167,7 @@ function renderAll() {
   renderHome();
   renderMods();
   renderSettings();
+  renderAlts();
   renderAccount();
 }
 
@@ -134,6 +177,14 @@ function renderHeader() {
     el.accountChip.textContent = `${state.authUser.displayName} • ${state.authUser.rankIcon || '🐟'} ${state.authUser.rankName || 'Fish'} • ${sub}`;
   } else {
     el.accountChip.textContent = 'Not logged in';
+  }
+
+  const alt = selectedAlt();
+  if (alt) {
+    const typeLabel = alt.type === 'login' ? 'Login' : 'Cracked';
+    el.altChip.textContent = `${alt.rankIcon || '🐟'} ${alt.username} • ${typeLabel}`;
+  } else {
+    el.altChip.textContent = 'No alt selected';
   }
 
   const profile = selectedProfile();
@@ -158,7 +209,9 @@ function renderHome() {
   el.heroKicker.textContent = profile.branch || 'Stable';
   el.heroTitle.textContent = `Minecraft ${selectedVersion}`;
   el.heroSub.textContent = profile.name;
-  el.heroMeta.textContent = `${profile.loader || 'Fabric'} • ${profile.jvmArgs || '-Xmx4G'} • ${profile.gameDir || 'Project Workspace'}`;
+  const alt = selectedAlt();
+  const altLabel = alt ? `Alt ${alt.username}` : 'Alt Auto';
+  el.heroMeta.textContent = `${profile.loader || 'Fabric'} • ${profile.jvmArgs || '-Xmx4G'} • ${altLabel}`;
   el.runtimeText.textContent = profile.javaPath && profile.javaPath.trim() ? profile.javaPath : 'Java Auto';
 
   applyHeroBackground(profile);
@@ -248,10 +301,11 @@ function renderRecent() {
 }
 
 function renderAccount() {
+  const alt = selectedAlt();
   if (!state.authUser) {
     el.accountName.textContent = 'Not logged in';
     el.accountRank.textContent = 'Rank: -';
-    el.accountSub.textContent = 'Subscription: -';
+    el.accountSub.textContent = alt ? `Selected Alt: ${alt.username}` : 'Subscription: -';
     el.accountStatus.textContent = 'Status: Offline';
     el.accountAvatar.textContent = '🐟';
     return;
@@ -265,7 +319,8 @@ function renderAccount() {
   el.accountAvatar.textContent = rankIcon;
   el.accountName.textContent = state.authUser.displayName;
   el.accountRank.textContent = `Rank: ${rankIcon} ${rankName}`;
-  el.accountSub.textContent = `Subscription: ${sub}${expires}`;
+  const altText = alt ? ` • Alt: ${alt.username}` : '';
+  el.accountSub.textContent = `Subscription: ${sub}${expires}${altText}`;
   el.accountStatus.textContent = 'Status: Online';
 }
 
@@ -350,11 +405,170 @@ function renderSettings() {
   if (!profile) {
     el.launchCommandInput.value = '';
     el.selectedVersionInput.value = '';
+    el.msClientIdInput.value = '';
+    el.msTenantInput.value = '';
+    el.msScopeInput.value = '';
+    el.msRedirectInput.value = '';
     return;
   }
 
   el.launchCommandInput.value = profile.launchCommandTemplate || '';
   el.selectedVersionInput.value = state.launcherState.selectedVersion || profile.gameVersion || '1.21.11';
+  el.msClientIdInput.value = state.config?.msAuth?.clientId || '';
+  el.msTenantInput.value = state.config?.msAuth?.tenant || 'consumers';
+  el.msScopeInput.value = state.config?.msAuth?.scope || 'XboxLive.signin offline_access';
+  el.msRedirectInput.value = state.config?.msAuth?.redirectUri || 'https://login.microsoftonline.com/common/oauth2/nativeclient';
+}
+
+function sanitizeAltUsername(input) {
+  return String(input || '').replace(/[^A-Za-z0-9_]/g, '').slice(0, 16);
+}
+
+function makeAltId(username) {
+  const base = `alt-${username.toLowerCase() || 'player'}`;
+  const existing = new Set((state.config?.alts || []).map((alt) => alt.id));
+  if (!existing.has(base)) {
+    return base;
+  }
+
+  let suffix = 2;
+  while (existing.has(`${base}-${suffix}`)) {
+    suffix += 1;
+  }
+  return `${base}-${suffix}`;
+}
+
+function renderAlts() {
+  const alts = Array.isArray(state.config?.alts) ? state.config.alts : [];
+  const active = selectedAlt();
+
+  if (!active) {
+    el.selectedAltIcon.textContent = '🐟';
+    el.selectedAltName.textContent = 'No alt selected';
+    el.selectedAltType.textContent = 'Type: -';
+    el.selectedAltNote.textContent = 'Add an alt below to set a fixed username.';
+  } else {
+    el.selectedAltIcon.textContent = active.rankIcon || '🐟';
+    el.selectedAltName.textContent = active.username;
+    const provider = active.authProvider ? ` • ${active.authProvider}` : '';
+    el.selectedAltType.textContent = `Type: ${active.type === 'login' ? 'Login Profile' : 'Cracked / Offline'}${provider}`;
+    el.selectedAltNote.textContent = active.note || 'No note';
+  }
+
+  el.altsList.innerHTML = '';
+  if (!alts.length) {
+    const empty = document.createElement('div');
+    empty.className = 'alt-list-empty';
+    empty.textContent = 'No alts yet. Add your first one.';
+    el.altsList.appendChild(empty);
+    return;
+  }
+
+  alts.forEach((alt) => {
+    const item = document.createElement('div');
+    item.className = `alt-item ${active && active.id === alt.id ? 'active' : ''}`;
+    item.innerHTML = `
+      <div class="alt-item-meta">
+        <strong>${escapeHtml(alt.rankIcon || '🐟')} ${escapeHtml(alt.username)}</strong>
+        <span>${escapeHtml(alt.type === 'login' ? 'Login Profile' : 'Cracked / Offline')}${alt.authProvider ? ` • ${escapeHtml(alt.authProvider)}` : ''}${alt.note ? ` • ${escapeHtml(alt.note)}` : ''}</span>
+      </div>
+      <div class="alt-item-actions">
+        <button class="ghost-btn alt-select-btn">Use</button>
+        <button class="ghost-btn alt-remove-btn">Remove</button>
+      </div>
+    `;
+
+    const selectBtn = item.querySelector('.alt-select-btn');
+    const removeBtn = item.querySelector('.alt-remove-btn');
+    selectBtn.addEventListener('click', () => selectAltById(alt.id));
+    removeBtn.addEventListener('click', () => removeAltById(alt.id));
+    el.altsList.appendChild(item);
+  });
+
+  if (!state.msDevice.polling) {
+    el.msDeviceCode.textContent = 'Code: -';
+    el.msDeviceStatus.textContent = 'Idle.';
+    el.msDeviceStartBtn.disabled = false;
+    el.msWebStartBtn.disabled = false;
+    el.msWebStartBtn.textContent = 'Microsoft Email Login (Use Device)';
+  }
+}
+
+async function selectAltById(id) {
+  const alts = Array.isArray(state.config?.alts) ? state.config.alts : [];
+  const found = alts.find((alt) => alt.id === id);
+  if (!found) {
+    setStatus('Alt not found.');
+    return;
+  }
+
+  state.launcherState.selectedAltId = found.id;
+  await persistState();
+  renderAll();
+  setStatus(`Selected alt: ${found.username}`);
+}
+
+async function removeAltById(id) {
+  const alts = Array.isArray(state.config?.alts) ? state.config.alts : [];
+  if (alts.length <= 1) {
+    setStatus('Keep at least one alt.');
+    return;
+  }
+
+  const next = alts.filter((alt) => alt.id !== id);
+  if (next.length === alts.length) {
+    return;
+  }
+
+  state.config.alts = next;
+  if (!next.some((alt) => alt.id === state.launcherState.selectedAltId)) {
+    state.launcherState.selectedAltId = next[0].id;
+    await persistState();
+  }
+  await persistConfig();
+  renderAll();
+  setStatus('Alt removed.');
+}
+
+async function addAltFromForm(event) {
+  event.preventDefault();
+  const username = sanitizeAltUsername(el.altUsernameInput.value);
+  const type = el.altTypeInput.value === 'login' ? 'login' : 'offline';
+  const note = String(el.altNoteInput.value || '').trim().slice(0, 48);
+
+  if (username.length < 3) {
+    setStatus('Alt username must be at least 3 letters/numbers.');
+    return;
+  }
+
+  const exists = (state.config.alts || []).some((alt) => alt.username.toLowerCase() === username.toLowerCase());
+  if (exists) {
+    setStatus('This alt already exists.');
+    return;
+  }
+
+  const alt = {
+    id: makeAltId(username),
+    username,
+    type,
+    note,
+    rankIcon: '🐟',
+    authProvider: type === 'login' ? 'local' : 'offline'
+  };
+
+  if (!Array.isArray(state.config.alts)) {
+    state.config.alts = [];
+  }
+  state.config.alts.push(alt);
+  state.launcherState.selectedAltId = alt.id;
+
+  await persistConfig();
+  await persistState();
+
+  el.altForm.reset();
+  el.altTypeInput.value = 'offline';
+  renderAll();
+  setStatus(`Added alt: ${username}`);
 }
 
 async function saveSettings() {
@@ -365,11 +579,18 @@ async function saveSettings() {
 
   profile.launchCommandTemplate = el.launchCommandInput.value.trim() || 'gradlew.bat runClient';
   state.launcherState.selectedVersion = el.selectedVersionInput.value.trim() || profile.gameVersion;
+  if (!state.config.msAuth || typeof state.config.msAuth !== 'object') {
+    state.config.msAuth = {};
+  }
+  state.config.msAuth.clientId = (el.msClientIdInput.value || '').trim();
+  state.config.msAuth.tenant = (el.msTenantInput.value || 'consumers').trim().toLowerCase();
+  state.config.msAuth.scope = (el.msScopeInput.value || 'XboxLive.signin offline_access').trim();
+  state.config.msAuth.redirectUri = (el.msRedirectInput.value || 'https://login.microsoftonline.com/common/oauth2/nativeclient').trim();
 
   await persistState();
   await persistConfig();
   renderAll();
-  setStatus('Saved launcher settings.');
+  setStatus('Saved launcher settings (including Microsoft auth settings).');
 }
 
 async function clearRecent() {
@@ -389,27 +610,26 @@ async function persistConfig() {
 }
 
 async function launchSelected() {
-  if (!isAuthenticated()) {
-    showLoginGate();
-    setStatus('Login required before launching.');
-    return;
-  }
-
   const profile = selectedProfile();
+  const alt = selectedAlt();
   if (!profile) {
     setStatus('No profile selected.');
     return;
   }
 
   const version = state.launcherState.selectedVersion || profile.gameVersion;
-  setStatus(`Starting ${profile.name}...`);
+  if (!isAuthenticated()) {
+    setStatus(`Starting ${profile.name} without launcher login...`);
+  }
+  setStatus(`Starting ${profile.name} as ${alt ? alt.username : 'selected alt'}...`);
   el.playBtn.disabled = true;
   el.playBtn.textContent = 'Launching...';
 
   try {
     const launch = await window.fishLauncher.launchProfile({
       profileId: profile.id,
-      version
+      version,
+      altUsername: alt ? alt.username : ''
     });
 
     if (launch.ok) {
@@ -432,7 +652,8 @@ async function launchSelected() {
         paths.push(`MainLog: ${launch.mainLog}`);
       }
 
-      setStatus(paths.length ? `${launch.message} ${paths.join(' | ')}` : launch.message);
+      const launchedAs = launch.alt ? ` as ${launch.alt}` : '';
+      setStatus(paths.length ? `${launch.message}${launchedAs} ${paths.join(' | ')}` : `${launch.message}${launchedAs}`);
     } else {
       const commandInfo = launch.command ? ` Command: ${launch.command}` : '';
       const mainLogInfo = launch.mainLog ? ` MainLog: ${launch.mainLog}` : '';
@@ -444,6 +665,224 @@ async function launchSelected() {
   } finally {
     el.playBtn.disabled = false;
     el.playBtn.textContent = 'Launch';
+  }
+}
+
+async function startMicrosoftDeviceLogin() {
+  if (state.msDevice.polling) {
+    setStatus('Microsoft login already in progress.');
+    return;
+  }
+
+  el.msDeviceStartBtn.disabled = true;
+  el.msWebStartBtn.disabled = true;
+  el.msDeviceStatus.textContent = 'Requesting device code...';
+  setStatus('Starting Microsoft device login...');
+
+  try {
+    const started = await window.fishLauncher.msDeviceStart();
+    if (!started.ok) {
+      el.msDeviceStartBtn.disabled = false;
+      el.msWebStartBtn.disabled = false;
+      el.msDeviceStatus.textContent = started.message || 'Could not start Microsoft login.';
+      setStatus(el.msDeviceStatus.textContent);
+      return;
+    }
+
+    state.msDevice.sessionId = started.sessionId;
+    state.msDevice.polling = true;
+    el.msDeviceCode.textContent = `Code: ${started.userCode || '-'}`;
+    el.msDeviceLink.href = started.verificationUriComplete || started.verificationUri || 'https://www.microsoft.com/link';
+    el.msDeviceStatus.textContent = started.message || 'Open microsoft.com/link and enter the code.';
+    el.msDeviceStartBtn.disabled = true;
+    el.msWebStartBtn.disabled = true;
+
+    scheduleMicrosoftPoll(Math.max(1200, Number(started.intervalMs || 5000)));
+    setStatus('Open microsoft.com/link and enter your code.');
+  } catch (error) {
+    state.msDevice.polling = false;
+    state.msDevice.sessionId = '';
+    el.msDeviceStartBtn.disabled = false;
+    el.msWebStartBtn.disabled = false;
+    el.msDeviceStatus.textContent = `Microsoft login failed: ${error.message}`;
+    setStatus(el.msDeviceStatus.textContent);
+  }
+}
+
+function scheduleMicrosoftPoll(delayMs) {
+  clearMicrosoftPollTimer();
+  state.msDevice.timer = setTimeout(pollMicrosoftDeviceLogin, Math.max(1000, delayMs));
+}
+
+function clearMicrosoftPollTimer() {
+  if (state.msDevice.timer) {
+    clearTimeout(state.msDevice.timer);
+    state.msDevice.timer = null;
+  }
+}
+
+async function pollMicrosoftDeviceLogin() {
+  if (!state.msDevice.polling || !state.msDevice.sessionId) {
+    return;
+  }
+
+  try {
+    const result = await window.fishLauncher.msDevicePoll(state.msDevice.sessionId);
+    if (result.ok && result.status === 'pending') {
+      el.msDeviceStatus.textContent = result.message || 'Waiting for Microsoft confirmation...';
+      scheduleMicrosoftPoll(Math.max(1000, Number(result.retryInMs || 5000)));
+      return;
+    }
+
+    if (result.ok && result.status === 'success') {
+      clearMicrosoftPollTimer();
+      state.msDevice.polling = false;
+      state.msDevice.sessionId = '';
+
+      const bootstrap = await window.fishLauncher.getBootstrap();
+      state.config = bootstrap.config;
+      state.launcherState = bootstrap.state;
+      state.modpack = bootstrap.modpack;
+      state.authUser = bootstrap.authUser;
+
+      if (result.alt && result.alt.id) {
+        state.launcherState.selectedAltId = result.alt.id;
+        await persistState();
+      }
+
+      renderAll();
+      el.msDeviceStatus.textContent = result.message || 'Microsoft account added.';
+      el.msDeviceStartBtn.disabled = false;
+      el.msWebStartBtn.disabled = false;
+      setStatus(result.message || 'Microsoft account added.');
+      return;
+    }
+
+    clearMicrosoftPollTimer();
+    state.msDevice.polling = false;
+    state.msDevice.sessionId = '';
+    el.msDeviceStartBtn.disabled = false;
+    el.msWebStartBtn.disabled = false;
+    el.msDeviceStatus.textContent = result.message || 'Microsoft login failed.';
+    setStatus(el.msDeviceStatus.textContent);
+  } catch (error) {
+    clearMicrosoftPollTimer();
+    state.msDevice.polling = false;
+    state.msDevice.sessionId = '';
+    el.msDeviceStartBtn.disabled = false;
+    el.msWebStartBtn.disabled = false;
+    el.msDeviceStatus.textContent = `Microsoft login failed: ${error.message}`;
+    setStatus(el.msDeviceStatus.textContent);
+  }
+}
+
+async function cancelMicrosoftDeviceLogin() {
+  if (state.msWeb.sessionId) {
+    const webSession = state.msWeb.sessionId;
+    clearMicrosoftWebPollTimer();
+    state.msWeb.polling = false;
+    state.msWeb.sessionId = '';
+    try {
+      await window.fishLauncher.msWebCancel(webSession);
+    } catch {
+      // ignore cancellation RPC errors
+    }
+  }
+
+  if (!state.msDevice.sessionId) {
+    if (!state.msWeb.sessionId) {
+      el.msDeviceStatus.textContent = 'No active Microsoft login.';
+      return;
+    }
+  }
+
+  const sessionId = state.msDevice.sessionId;
+  clearMicrosoftPollTimer();
+  state.msDevice.polling = false;
+  state.msDevice.sessionId = '';
+  el.msDeviceStartBtn.disabled = false;
+  el.msWebStartBtn.disabled = false;
+  el.msDeviceCode.textContent = 'Code: -';
+  el.msDeviceStatus.textContent = 'Canceled.';
+
+  try {
+    await window.fishLauncher.msDeviceCancel(sessionId);
+  } catch {
+    // ignore cancellation RPC errors
+  }
+  setStatus('Canceled Microsoft login.');
+}
+
+function clearMicrosoftWebPollTimer() {
+  if (state.msWeb.timer) {
+    clearTimeout(state.msWeb.timer);
+    state.msWeb.timer = null;
+  }
+}
+
+function scheduleMicrosoftWebPoll(delayMs) {
+  clearMicrosoftWebPollTimer();
+  state.msWeb.timer = setTimeout(pollMicrosoftWebLogin, Math.max(1000, delayMs));
+}
+
+async function startMicrosoftWebLogin() {
+  el.msDeviceStatus.textContent = 'Email flow is deprecated in this launcher. Starting device login instead...';
+  setStatus('Using device login (recommended).');
+  await startMicrosoftDeviceLogin();
+}
+
+async function pollMicrosoftWebLogin() {
+  if (!state.msWeb.polling || !state.msWeb.sessionId) {
+    return;
+  }
+
+  try {
+    const result = await window.fishLauncher.msWebPoll(state.msWeb.sessionId);
+    if (result.ok && result.status === 'pending') {
+      el.msDeviceStatus.textContent = result.message || 'Waiting for browser login...';
+      scheduleMicrosoftWebPoll(Math.max(1000, Number(result.retryInMs || 1200)));
+      return;
+    }
+
+    if (result.ok && result.status === 'success') {
+      clearMicrosoftWebPollTimer();
+      state.msWeb.polling = false;
+      state.msWeb.sessionId = '';
+      el.msWebStartBtn.disabled = false;
+      el.msDeviceStartBtn.disabled = false;
+
+      const bootstrap = await window.fishLauncher.getBootstrap();
+      state.config = bootstrap.config;
+      state.launcherState = bootstrap.state;
+      state.modpack = bootstrap.modpack;
+      state.authUser = bootstrap.authUser;
+
+      if (result.alt && result.alt.id) {
+        state.launcherState.selectedAltId = result.alt.id;
+        await persistState();
+      }
+
+      renderAll();
+      el.msDeviceStatus.textContent = result.message || 'Microsoft account added.';
+      setStatus(result.message || 'Microsoft account added.');
+      return;
+    }
+
+    clearMicrosoftWebPollTimer();
+    state.msWeb.polling = false;
+    state.msWeb.sessionId = '';
+    el.msWebStartBtn.disabled = false;
+    el.msDeviceStartBtn.disabled = false;
+    el.msDeviceStatus.textContent = result.message || 'Microsoft web login failed.';
+    setStatus(el.msDeviceStatus.textContent);
+  } catch (error) {
+    clearMicrosoftWebPollTimer();
+    state.msWeb.polling = false;
+    state.msWeb.sessionId = '';
+    el.msWebStartBtn.disabled = false;
+    el.msDeviceStartBtn.disabled = false;
+    el.msDeviceStatus.textContent = `Microsoft web login failed: ${error.message}`;
+    setStatus(el.msDeviceStatus.textContent);
   }
 }
 

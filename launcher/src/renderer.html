@@ -16,6 +16,7 @@
       <div class="title-left">
         <div class="brand-badge">F</div>
         <div class="title-chip" id="accountChip"></div>
+        <div class="title-chip" id="altChip"></div>
         <div class="title-chip" id="profileChip"></div>
       </div>
       <div class="title-center" id="sparkWrap">✦ ✦ ✦</div>
@@ -31,6 +32,7 @@
         <button class="side-btn active" data-tab="home" title="Home">⌂</button>
         <button class="side-btn" data-tab="mods" title="Mods">⚙</button>
         <button class="side-btn" data-tab="settings" title="Settings">⚑</button>
+        <button class="side-btn" data-tab="alts" title="Alt Manager">👥</button>
         <button class="side-btn" data-tab="account" title="Account">🐟</button>
         <div class="side-spacer"></div>
         <button class="side-btn" id="openFolderBtn" title="Open Project Folder">📁</button>
@@ -108,12 +110,89 @@
               <span>Selected version</span>
               <input id="selectedVersionInput" type="text" />
             </label>
+            <label>
+              <span>Microsoft Client ID (Device Login)</span>
+              <input id="msClientIdInput" type="text" />
+            </label>
+            <label>
+              <span>Microsoft Tenant (`consumers` or `common`)</span>
+              <input id="msTenantInput" type="text" />
+            </label>
+            <label>
+              <span>Microsoft Scope</span>
+              <input id="msScopeInput" type="text" />
+            </label>
+            <label>
+              <span>Microsoft Redirect URI (Advanced)</span>
+              <input id="msRedirectInput" type="text" placeholder="https://login.microsoftonline.com/common/oauth2/nativeclient" />
+            </label>
             <div class="settings-actions">
               <button id="saveSettingsBtn" class="ghost-btn">Save</button>
               <button id="openConfigBtn" class="ghost-btn">Open Config Folder</button>
               <button id="supportBtn" class="ghost-btn">Discord</button>
             </div>
           </div>
+        </section>
+
+        <section id="altsTab" class="tab-panel">
+          <div class="panel-header-row">
+            <h2>Alt Manager</h2>
+          </div>
+          <div class="alts-grid">
+            <article class="alt-card current-alt-card">
+              <div class="alt-card-head">Selected Alt</div>
+              <div class="current-alt-main">
+                <div class="current-alt-icon" id="selectedAltIcon">🐟</div>
+                <div class="current-alt-meta">
+                  <h3 id="selectedAltName">No alt selected</h3>
+                  <p id="selectedAltType">Type: -</p>
+                  <p id="selectedAltNote">-</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="alt-card">
+              <div class="alt-card-head">Add New Alt</div>
+              <form id="altForm" class="alt-form" autocomplete="off">
+                <label>
+                  <span>Username (3-16)</span>
+                  <input id="altUsernameInput" type="text" maxlength="16" required />
+                </label>
+                <label>
+                  <span>Type</span>
+                  <select id="altTypeInput">
+                    <option value="offline">Cracked / Offline</option>
+                    <option value="login">Login Profile</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Note</span>
+                  <input id="altNoteInput" type="text" maxlength="48" />
+                </label>
+                <button id="addAltBtn" class="launch-btn" type="submit">Add Alt</button>
+              </form>
+            </article>
+
+            <article class="alt-card">
+              <div class="alt-card-head">Microsoft Login</div>
+              <div class="ms-device-wrap" id="msDeviceWrap">
+                <p class="ms-device-desc">Use device code login at <strong>microsoft.com/link</strong> to add your Microsoft Minecraft account.</p>
+                <div class="ms-device-actions">
+                  <button id="msWebStartBtn" class="launch-btn" type="button">Microsoft Email Login (Use Device)</button>
+                  <button id="msDeviceStartBtn" class="launch-btn" type="button">Login with Microsoft</button>
+                  <button id="msDeviceCancelBtn" class="ghost-btn" type="button">Cancel</button>
+                </div>
+                <div class="ms-device-code" id="msDeviceCode">Code: -</div>
+                <a id="msDeviceLink" class="ms-device-link" href="https://www.microsoft.com/link" target="_blank" rel="noreferrer noopener">Open microsoft.com/link</a>
+                <div class="ms-device-status" id="msDeviceStatus">Idle.</div>
+              </div>
+            </article>
+          </div>
+
+          <article class="alt-card alt-list-card">
+            <div class="alt-card-head">Saved Alts</div>
+            <div id="altsList" class="alts-list"></div>
+          </article>
         </section>
 
         <section id="accountTab" class="tab-panel">
