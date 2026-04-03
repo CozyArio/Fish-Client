@@ -12,6 +12,6 @@
     "lint": "echo 'No lint configured'"
   },
   "devDependencies": {
-    "electron": "^37.2.3"
+    "electron": "^39.8.4"
   }
 }
