@@ -1,0 +1,1923 @@
+{
+  "modules": [
+    {
+      "name": "Nuker",
+      "enabled": false,
+      "keybind": 90,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 5.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Blocks Per Tick",
+          "type": "SLIDER",
+          "value": 40.0
+        },
+        {
+          "label": "Mine Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Pattern",
+          "type": "SELECT",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "Range Extender",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 10.0
+        },
+        {
+          "label": "Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Packet Mine",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "FastMine",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Speed",
+          "type": "SLIDER",
+          "value": 8.0
+        },
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "Rebreak",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 8.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 25.0
+        },
+        {
+          "label": "Blocks Per Tick",
+          "type": "SLIDER",
+          "value": 8.0
+        },
+        {
+          "label": "Speed",
+          "type": "SLIDER",
+          "value": 8.0
+        },
+        {
+          "label": "Mine Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Select Button",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Selection Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Pos1",
+          "type": "TEXT",
+          "value": "-"
+        },
+        {
+          "label": "Pos2",
+          "type": "TEXT",
+          "value": "-"
+        },
+        {
+          "label": "Clear Selected",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Selected Blocks",
+          "type": "TEXT",
+          "value": "1"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Added: -19 158 -19"
+        }
+      ]
+    },
+    {
+      "name": "Prison Layer Miner",
+      "enabled": false,
+      "keybind": 86,
+      "settings": [
+        {
+          "label": "Pos1",
+          "type": "TEXT",
+          "value": "-12678 167 -28020"
+        },
+        {
+          "label": "Pos1 Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Pos2",
+          "type": "TEXT",
+          "value": "-12714 128 -27984"
+        },
+        {
+          "label": "Pos2 Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Target Block",
+          "type": "TEXT",
+          "value": ""
+        },
+        {
+          "label": "Skip Endstone",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Spinbot Synergy",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Spin Bonus %",
+          "type": "SLIDER",
+          "value": 35.0
+        },
+        {
+          "label": "Looking At",
+          "type": "TEXT",
+          "value": "minecraft:andesite_slab"
+        },
+        {
+          "label": "Target Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 5.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Blocks Per Tick",
+          "type": "SLIDER",
+          "value": 70.0
+        },
+        {
+          "label": "Mine Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Y Order",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Off"
+        }
+      ]
+    },
+    {
+      "name": "Token Block Miner",
+      "enabled": false,
+      "keybind": 72,
+      "settings": [
+        {
+          "label": "Target Block",
+          "type": "TEXT",
+          "value": "minecraft:sponge"
+        },
+        {
+          "label": "Looking At",
+          "type": "TEXT",
+          "value": "minecraft:andesite_slab"
+        },
+        {
+          "label": "Target Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 4.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Blocks Per Tick",
+          "type": "SLIDER",
+          "value": 20.0
+        },
+        {
+          "label": "Mine Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Require Hold Attack",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Off"
+        }
+      ]
+    },
+    {
+      "name": "Weed Farmer",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 1
+        },
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 4.0
+        },
+        {
+          "label": "Circle Radius",
+          "type": "SLIDER",
+          "value": 6.0
+        },
+        {
+          "label": "Circle Strength",
+          "type": "SLIDER",
+          "value": 3.0
+        },
+        {
+          "label": "Path Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Pos1",
+          "type": "TEXT",
+          "value": "0 64 0"
+        },
+        {
+          "label": "Pos1 Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Pos2",
+          "type": "TEXT",
+          "value": "8 64 8"
+        },
+        {
+          "label": "Pos2 Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Path Speed",
+          "type": "SLIDER",
+          "value": 0.18
+        },
+        {
+          "label": "Path Radius Boost",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Crops Per Tick",
+          "type": "SLIDER",
+          "value": 4.0
+        },
+        {
+          "label": "Target Crop",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Mature Only",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Require Hoe",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Hold Attack",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Path Status",
+          "type": "TEXT",
+          "value": "Off"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "Wings",
+      "enabled": false,
+      "keybind": 70,
+      "settings": [
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 1
+        },
+        {
+          "label": "Speed",
+          "type": "SLIDER",
+          "value": 2.0
+        },
+        {
+          "label": "Vertical",
+          "type": "SLIDER",
+          "value": 1.4000000000000001
+        },
+        {
+          "label": "Glide",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Bypass",
+          "type": "SELECT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "Speed",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Speed",
+          "type": "SLIDER",
+          "value": 1.6
+        },
+        {
+          "label": "Air Control",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "Auto Jump",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Auto Sprint",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Packet Boost",
+          "type": "TOGGLE",
+          "value": false
+        }
+      ]
+    },
+    {
+      "name": "Water Walker",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Upward",
+          "type": "SLIDER",
+          "value": 0.08
+        },
+        {
+          "label": "Require Moving",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Allow Jump",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "Freecam",
+      "enabled": false,
+      "keybind": 85,
+      "settings": [
+        {
+          "label": "Speed",
+          "type": "SLIDER",
+          "value": 1.9000000000000001
+        },
+        {
+          "label": "Vertical",
+          "type": "SLIDER",
+          "value": 1.9000000000000001
+        },
+        {
+          "label": "Sprint Mult",
+          "type": "SLIDER",
+          "value": 3.2
+        },
+        {
+          "label": "NoClip",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Block Interact",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Freeze Player",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "Sprint",
+      "enabled": false,
+      "keybind": 0,
+      "settings": []
+    },
+    {
+      "name": "NoFall",
+      "enabled": false,
+      "keybind": 0,
+      "settings": []
+    },
+    {
+      "name": "AutoClicker",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "CPS Min",
+          "type": "SLIDER",
+          "value": 8.0
+        },
+        {
+          "label": "CPS Max",
+          "type": "SLIDER",
+          "value": 12.0
+        },
+        {
+          "label": "Only Held",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "Criticals",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 150.0
+        },
+        {
+          "label": "Randomize ms",
+          "type": "SLIDER",
+          "value": 100.0
+        },
+        {
+          "label": "Chance %",
+          "type": "SLIDER",
+          "value": 100.0
+        },
+        {
+          "label": "Jump Height",
+          "type": "SLIDER",
+          "value": 0.2
+        },
+        {
+          "label": "Silent Height",
+          "type": "SLIDER",
+          "value": 0.05
+        },
+        {
+          "label": "Only OnGround",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Weapon",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "Reach",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Distance",
+          "type": "SLIDER",
+          "value": 3.5
+        }
+      ]
+    },
+    {
+      "name": "Hitbox Changer",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Player Size",
+          "type": "SLIDER",
+          "value": 0.12
+        },
+        {
+          "label": "Mob Size",
+          "type": "SLIDER",
+          "value": 0.1
+        },
+        {
+          "label": "Safe Mode",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Max Dist",
+          "type": "SLIDER",
+          "value": 3.2
+        }
+      ]
+    },
+    {
+      "name": "Spinbot",
+      "enabled": false,
+      "keybind": 82,
+      "settings": [
+        {
+          "label": "Spin Speed",
+          "type": "SLIDER",
+          "value": 30.0
+        },
+        {
+          "label": "Pitch",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Pitch Jitter",
+          "type": "SLIDER",
+          "value": 6.0
+        },
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 4.2
+        },
+        {
+          "label": "CPS",
+          "type": "SLIDER",
+          "value": 9.0
+        },
+        {
+          "label": "Targets/Tick",
+          "type": "SLIDER",
+          "value": 2.0
+        },
+        {
+          "label": "Hit Players",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Hit Mobs",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Aim At Target",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Cooldown",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Through Walls",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Body Preview",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "BlahajAura",
+      "enabled": false,
+      "keybind": 82,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 4.2
+        },
+        {
+          "label": "CPS",
+          "type": "SLIDER",
+          "value": 13.0
+        },
+        {
+          "label": "Target Amount",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "FOV",
+          "type": "SLIDER",
+          "value": 360.0
+        },
+        {
+          "label": "Aim Tolerance",
+          "type": "SLIDER",
+          "value": 22.0
+        },
+        {
+          "label": "Turn Speed",
+          "type": "SLIDER",
+          "value": 9.0
+        },
+        {
+          "label": "Priority",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Legit Mode",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Aim",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Rotate",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Through Walls",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Require Weapon",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Target Players",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Target Hostile",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Target Passive",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "Bridge",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 75.0
+        },
+        {
+          "label": "Extend",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "Auto Switch",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Hold Place",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "Backtrack",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "MS",
+          "type": "SLIDER",
+          "value": 300.0
+        },
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 4.5
+        },
+        {
+          "label": "Expand",
+          "type": "SLIDER",
+          "value": 0.35
+        },
+        {
+          "label": "Trail Points",
+          "type": "SLIDER",
+          "value": 24.0
+        },
+        {
+          "label": "Render Trail",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Hit Trail",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Through Walls",
+          "type": "TOGGLE",
+          "value": false
+        }
+      ]
+    },
+    {
+      "name": "FastUse",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Packets",
+          "type": "SLIDER",
+          "value": 18.0
+        },
+        {
+          "label": "Only Consumables",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Holding Use",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Only Ground",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Use Main Hand",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Use Offhand",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "AutoFish",
+      "enabled": false,
+      "keybind": 74,
+      "settings": [
+        {
+          "label": "Reel Delay ms",
+          "type": "SLIDER",
+          "value": 250.0
+        },
+        {
+          "label": "Recast Delay ms",
+          "type": "SLIDER",
+          "value": 900.0
+        },
+        {
+          "label": "Random Jitter ms",
+          "type": "SLIDER",
+          "value": 80.0
+        },
+        {
+          "label": "Auto Cast",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Rod",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Bobber In Water",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "Auto Unscrambler",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Dictionary",
+          "type": "SELECT",
+          "value": 1
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 470.0
+        },
+        {
+          "label": "Randomize ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "AutoWelcome",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Only VoidMines",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Message",
+          "type": "TEXT",
+          "value": "Welcome to VoidMines"
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 260.0
+        },
+        {
+          "label": "Randomize ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "GhostHand",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 6.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 120.0
+        },
+        {
+          "label": "Only Sneak",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Use Key",
+          "type": "TEXT",
+          "value": "G"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "DonutSMP",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Code",
+          "type": "TEXT",
+          "value": ""
+        },
+        {
+          "label": "Delay Sec",
+          "type": "SLIDER",
+          "value": 5.0
+        },
+        {
+          "label": "Ghost Count",
+          "type": "SLIDER",
+          "value": 32.0
+        },
+        {
+          "label": "Ground Spoof",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Drop Spoof",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Locked"
+        }
+      ]
+    },
+    {
+      "name": "Spawn Macro",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Command",
+          "type": "TEXT",
+          "value": "/spawn"
+        }
+      ]
+    },
+    {
+      "name": "Home Macro",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Command",
+          "type": "TEXT",
+          "value": "/home"
+        }
+      ]
+    },
+    {
+      "name": "PayAll",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Amount",
+          "type": "TEXT",
+          "value": "10000"
+        },
+        {
+          "label": "Currency",
+          "type": "TEXT",
+          "value": ""
+        },
+        {
+          "label": "Command Template",
+          "type": "TEXT",
+          "value": "pay {player} {amount}"
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 200.0
+        },
+        {
+          "label": "Include Self",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Refresh Before Run",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Player Source",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Scan Players",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Targets Cached",
+          "type": "TEXT",
+          "value": "32"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Running 12/32"
+        }
+      ]
+    },
+    {
+      "name": "AutoSell",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Command",
+          "type": "TEXT",
+          "value": "/sell"
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 400.0
+        },
+        {
+          "label": "Once Per Full",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "ClickGUI Bind",
+      "enabled": false,
+      "keybind": 0,
+      "settings": []
+    },
+    {
+      "name": "HUD",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Text Scale",
+          "type": "SLIDER",
+          "value": 1.1
+        },
+        {
+          "label": "Show Icon",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Shadows",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Show Rebreak Tag",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Show Radio Tag",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "ArrayList",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Color Style",
+          "type": "SELECT",
+          "value": 2
+        },
+        {
+          "label": "Use Comfortaa Font",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Text Scale",
+          "type": "SLIDER",
+          "value": 1.05
+        },
+        {
+          "label": "Show Mode",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Right Edge",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Y Offset",
+          "type": "SLIDER",
+          "value": -7.0
+        },
+        {
+          "label": "Background Alpha",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Shadow Alpha",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "Border Alpha",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "Color R",
+          "type": "SLIDER",
+          "value": 144.0
+        },
+        {
+          "label": "Color G",
+          "type": "SLIDER",
+          "value": 85.0
+        },
+        {
+          "label": "Color B",
+          "type": "SLIDER",
+          "value": 255.0
+        }
+      ]
+    },
+    {
+      "name": "Radio",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Station",
+          "type": "SELECT",
+          "value": 7
+        },
+        {
+          "label": "Volume %",
+          "type": "SLIDER",
+          "value": 100.0
+        },
+        {
+          "label": "Auto Play",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Show HUD",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "HUD Max Length",
+          "type": "SLIDER",
+          "value": 78.0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Disabled"
+        }
+      ]
+    },
+    {
+      "name": "ItemScale",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Scale",
+          "type": "SLIDER",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "name": "Hand Chams",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Color R",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "Color G",
+          "type": "SLIDER",
+          "value": 182.0
+        },
+        {
+          "label": "Color B",
+          "type": "SLIDER",
+          "value": 220.0
+        },
+        {
+          "label": "Opacity",
+          "type": "SLIDER",
+          "value": 185.0
+        }
+      ]
+    },
+    {
+      "name": "Item Chams",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 64.0
+        },
+        {
+          "label": "Color R",
+          "type": "SLIDER",
+          "value": 130.0
+        },
+        {
+          "label": "Color G",
+          "type": "SLIDER",
+          "value": 220.0
+        },
+        {
+          "label": "Color B",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "Opacity",
+          "type": "SLIDER",
+          "value": 70.0
+        },
+        {
+          "label": "Outline Alpha",
+          "type": "SLIDER",
+          "value": 210.0
+        }
+      ]
+    },
+    {
+      "name": "Chest Chams",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 20.0
+        },
+        {
+          "label": "Color R",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "Color G",
+          "type": "SLIDER",
+          "value": 170.0
+        },
+        {
+          "label": "Color B",
+          "type": "SLIDER",
+          "value": 90.0
+        },
+        {
+          "label": "Opacity",
+          "type": "SLIDER",
+          "value": 62.0
+        },
+        {
+          "label": "Outline Alpha",
+          "type": "SLIDER",
+          "value": 220.0
+        }
+      ]
+    },
+    {
+      "name": "Player Chams",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 80.0
+        },
+        {
+          "label": "Color R",
+          "type": "SLIDER",
+          "value": 120.0
+        },
+        {
+          "label": "Color G",
+          "type": "SLIDER",
+          "value": 200.0
+        },
+        {
+          "label": "Color B",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "Opacity",
+          "type": "SLIDER",
+          "value": 58.0
+        },
+        {
+          "label": "Outline Alpha",
+          "type": "SLIDER",
+          "value": 230.0
+        },
+        {
+          "label": "Line Width",
+          "type": "SLIDER",
+          "value": 1.3
+        }
+      ]
+    },
+    {
+      "name": "Mob Chams",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 72.0
+        },
+        {
+          "label": "Target Hostile",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Target Passive",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Color R",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "Color G",
+          "type": "SLIDER",
+          "value": 100.0
+        },
+        {
+          "label": "Color B",
+          "type": "SLIDER",
+          "value": 120.0
+        },
+        {
+          "label": "Opacity",
+          "type": "SLIDER",
+          "value": 52.0
+        },
+        {
+          "label": "Outline Alpha",
+          "type": "SLIDER",
+          "value": 220.0
+        },
+        {
+          "label": "Line Width",
+          "type": "SLIDER",
+          "value": 1.25
+        }
+      ]
+    },
+    {
+      "name": "FOV Changer",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Default FOV",
+          "type": "SLIDER",
+          "value": 120.0
+        },
+        {
+          "label": "Sprint FOV",
+          "type": "SLIDER",
+          "value": 126.0
+        },
+        {
+          "label": "Fly FOV",
+          "type": "SLIDER",
+          "value": 120.0
+        }
+      ]
+    },
+    {
+      "name": "Sun",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Restore on Disable",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Night Vision"
+        }
+      ]
+    },
+    {
+      "name": "DSL",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Preset",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Intensity",
+          "type": "SLIDER",
+          "value": 58.0
+        },
+        {
+          "label": "Speed",
+          "type": "SLIDER",
+          "value": 9.0
+        },
+        {
+          "label": "Color Shift",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Scanlines",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Flash",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Wobble FOV",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "Rank Spoof",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Spoof Tab",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Spoof Chat",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Rank",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Refresh Ranks",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Auto Refresh",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Detected",
+          "type": "TEXT",
+          "value": "0"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Disabled"
+        }
+      ]
+    },
+    {
+      "name": "PlayerESP",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 80.0
+        },
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 3
+        },
+        {
+          "label": "Draw Style",
+          "type": "SELECT",
+          "value": 1
+        },
+        {
+          "label": "Tracers",
+          "type": "TOGGLE",
+          "value": false
+        }
+      ]
+    },
+    {
+      "name": "MobESP",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 72.0
+        },
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Draw Style",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Target Hostile",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Target Passive",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Through Walls",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Tracers",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "StorageESP",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 16.0
+        },
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Include Ender",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Include Furnaces",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "FarmESP",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 24.0
+        },
+        {
+          "label": "Target Crop",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Mature Only",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Draw Style",
+          "type": "SELECT",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "BlockESP",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Target Block",
+          "type": "TEXT",
+          "value": "minecraft:sponge"
+        },
+        {
+          "label": "Match",
+          "type": "SELECT",
+          "value": 1
+        },
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 42.0
+        },
+        {
+          "label": "Vertical Range",
+          "type": "SLIDER",
+          "value": 19.0
+        },
+        {
+          "label": "Max Boxes",
+          "type": "SLIDER",
+          "value": 120.0
+        },
+        {
+          "label": "Scan Delay ms",
+          "type": "SLIDER",
+          "value": 1670.0
+        },
+        {
+          "label": "Draw Style",
+          "type": "SELECT",
+          "value": 1
+        },
+        {
+          "label": "Through Walls",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Color R",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "Color G",
+          "type": "SLIDER",
+          "value": 2.0
+        },
+        {
+          "label": "Color B",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Opacity",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "Outline Alpha",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Found 76 / 76"
+        }
+      ]
+    },
+    {
+      "name": "ClickGUI Style",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Accent R",
+          "type": "SLIDER",
+          "value": 116.0
+        },
+        {
+          "label": "Accent G",
+          "type": "SLIDER",
+          "value": 71.0
+        },
+        {
+          "label": "Accent B",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "GUI STYLE",
+          "type": "SELECT",
+          "value": 3
+        },
+        {
+          "label": "ClickGUI Style",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Use Comfortaa Font",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Font Scale",
+          "type": "SLIDER",
+          "value": 0.9500000000000001
+        },
+        {
+          "label": "Click Sound",
+          "type": "SELECT",
+          "value": 1
+        },
+        {
+          "label": "Click Volume %",
+          "type": "SLIDER",
+          "value": 72.0
+        },
+        {
+          "label": "Click Sounds",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    }
+  ]
+}

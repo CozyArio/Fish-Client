@@ -1,0 +1,459 @@
+{
+  "modules": [
+    {
+      "name": "Nuker",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 6.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 40.0
+        },
+        {
+          "label": "Blocks Per Tick",
+          "type": "SLIDER",
+          "value": 12.0
+        },
+        {
+          "label": "Mine Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Pattern",
+          "type": "SELECT",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "Range Extender",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 10.0
+        },
+        {
+          "label": "Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Packet Mine",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "Rebreak",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 8.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 25.0
+        },
+        {
+          "label": "Blocks Per Tick",
+          "type": "SLIDER",
+          "value": 8.0
+        },
+        {
+          "label": "Mine Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Select Button",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Selection Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Pos1",
+          "type": "TEXT",
+          "value": "-"
+        },
+        {
+          "label": "Pos2",
+          "type": "TEXT",
+          "value": "-"
+        },
+        {
+          "label": "Clear Selected",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Selected Blocks",
+          "type": "TEXT",
+          "value": "1"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Added: -19 158 -19"
+        }
+      ]
+    },
+    {
+      "name": "Prison Layer Miner",
+      "enabled": false,
+      "keybind": 88,
+      "settings": [
+        {
+          "label": "Pos1",
+          "type": "TEXT",
+          "value": "-21 160 40"
+        },
+        {
+          "label": "Pos1 Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Pos2",
+          "type": "TEXT",
+          "value": "20 90 -21"
+        },
+        {
+          "label": "Pos2 Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Target Block",
+          "type": "TEXT",
+          "value": ""
+        },
+        {
+          "label": "Looking At",
+          "type": "TEXT",
+          "value": "minecraft:iron_ore"
+        },
+        {
+          "label": "Target Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 3.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 35.0
+        },
+        {
+          "label": "Blocks Per Tick",
+          "type": "SLIDER",
+          "value": 35.0
+        },
+        {
+          "label": "Mine Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Y Order",
+          "type": "SELECT",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "Wings",
+      "enabled": false,
+      "keybind": 70,
+      "settings": [
+        {
+          "label": "Speed",
+          "type": "SLIDER",
+          "value": 2.5
+        },
+        {
+          "label": "Vertical",
+          "type": "SLIDER",
+          "value": 1.7000000000000002
+        },
+        {
+          "label": "Glide",
+          "type": "TOGGLE",
+          "value": false
+        }
+      ]
+    },
+    {
+      "name": "Sprint",
+      "enabled": false,
+      "keybind": 0,
+      "settings": []
+    },
+    {
+      "name": "FISH MODE",
+      "enabled": false,
+      "keybind": 0,
+      "settings": []
+    },
+    {
+      "name": "AutoClicker",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "CPS Min",
+          "type": "SLIDER",
+          "value": 8.0
+        },
+        {
+          "label": "CPS Max",
+          "type": "SLIDER",
+          "value": 12.0
+        },
+        {
+          "label": "Only Held",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "Reach",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Distance",
+          "type": "SLIDER",
+          "value": 3.5
+        }
+      ]
+    },
+    {
+      "name": "Spawn Macro",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Command",
+          "type": "TEXT",
+          "value": "/spawn"
+        }
+      ]
+    },
+    {
+      "name": "Home Macro",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Command",
+          "type": "TEXT",
+          "value": "/home"
+        }
+      ]
+    },
+    {
+      "name": "PayAll",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Amount",
+          "type": "TEXT",
+          "value": "1000"
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 250.0
+        },
+        {
+          "label": "Include Self",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Player Source",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Scan Players",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Targets Cached",
+          "type": "TEXT",
+          "value": "0"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "ClickGUI Bind",
+      "enabled": false,
+      "keybind": 0,
+      "settings": []
+    },
+    {
+      "name": "HUD",
+      "enabled": true,
+      "keybind": 0,
+      "settings": []
+    },
+    {
+      "name": "ArrayList",
+      "enabled": true,
+      "keybind": 0,
+      "settings": []
+    },
+    {
+      "name": "ItemScale",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Scale",
+          "type": "SLIDER",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "name": "FOV Changer",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Default FOV",
+          "type": "SLIDER",
+          "value": 90.0
+        },
+        {
+          "label": "Sprint FOV",
+          "type": "SLIDER",
+          "value": 90.0
+        },
+        {
+          "label": "Fly FOV",
+          "type": "SLIDER",
+          "value": 90.0
+        }
+      ]
+    },
+    {
+      "name": "PlayerESP",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 80.0
+        },
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Draw Style",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Tracers",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "StorageESP",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 16.0
+        },
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Include Ender",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Include Furnaces",
+          "type": "TOGGLE",
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "ClickGUI Style",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Accent R",
+          "type": "SLIDER",
+          "value": 170.0
+        },
+        {
+          "label": "Accent G",
+          "type": "SLIDER",
+          "value": 85.0
+        },
+        {
+          "label": "Accent B",
+          "type": "SLIDER",
+          "value": 255.0
+        },
+        {
+          "label": "GUI STYLE",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "ClickGUI Style",
+          "type": "SELECT",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}
