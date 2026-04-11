@@ -771,7 +771,7 @@
     },
     {
       "name": "BlahajAura",
-      "enabled": false,
+      "enabled": true,
       "keybind": 82,
       "settings": [
         {
@@ -1019,6 +1019,11 @@
         },
         {
           "label": "Require Rod",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Fish While Unfocused",
           "type": "TOGGLE",
           "value": true
         },
@@ -1986,7 +1991,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 6s | presence ok"
         }
       ]
     },
