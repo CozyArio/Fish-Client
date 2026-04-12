@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:iron_block"
+          "value": "minecraft:nether_wart"
         },
         {
           "label": "Target Action",
@@ -278,7 +278,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:iron_block"
+          "value": "minecraft:nether_wart"
         },
         {
           "label": "Target Action",
@@ -320,7 +320,7 @@
     {
       "name": "Weed Farmer",
       "enabled": false,
-      "keybind": 88,
+      "keybind": 0,
       "settings": [
         {
           "label": "Mode",
@@ -437,7 +437,7 @@
     {
       "name": "Crop Eater",
       "enabled": false,
-      "keybind": 0,
+      "keybind": 88,
       "settings": [
         {
           "label": "Range",
@@ -447,7 +447,7 @@
         {
           "label": "Delay ms",
           "type": "SLIDER",
-          "value": 115.0
+          "value": 70.0
         },
         {
           "label": "Crops Per Tick",
@@ -462,7 +462,7 @@
         {
           "label": "Mature Only",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "Require Hoe",
@@ -482,7 +482,7 @@
         {
           "label": "Spinbot Synergy",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "Spin Bonus %",
@@ -497,7 +497,7 @@
         {
           "label": "ZigZag Strafe",
           "type": "SLIDER",
-          "value": 0.16
+          "value": 0.28
         },
         {
           "label": "ZigZag Switch ms",
@@ -512,7 +512,7 @@
         {
           "label": "Turn Speed",
           "type": "SLIDER",
-          "value": 7.0
+          "value": 14.0
         },
         {
           "label": "Auto Sprint",
@@ -2322,7 +2322,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 7s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 8s | presence ok"
         }
       ]
     },
