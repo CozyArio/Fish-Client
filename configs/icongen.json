@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:sweet_berry_bush"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -278,7 +278,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:sweet_berry_bush"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -436,23 +436,23 @@
     },
     {
       "name": "Crop Eater",
-      "enabled": false,
+      "enabled": true,
       "keybind": 88,
       "settings": [
         {
           "label": "Range",
           "type": "SLIDER",
-          "value": 6.0
+          "value": 7.0
         },
         {
           "label": "Delay ms",
           "type": "SLIDER",
-          "value": 70.0
+          "value": 50.0
         },
         {
           "label": "Crops Per Tick",
           "type": "SLIDER",
-          "value": 4.0
+          "value": 6.0
         },
         {
           "label": "Target Crop",
@@ -522,12 +522,12 @@
         {
           "label": "Move Status",
           "type": "TEXT",
-          "value": "Idle"
+          "value": "Hold attack key"
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Idle"
+          "value": "Hold attack key"
         }
       ]
     },
@@ -1371,7 +1371,7 @@
     },
     {
       "name": "AutoWelcome",
-      "enabled": true,
+      "enabled": false,
       "keybind": 0,
       "settings": [
         {
@@ -1397,7 +1397,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Sent: Welcome"
+          "value": "Idle"
         }
       ]
     },
@@ -2322,7 +2322,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 5s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 11s | presence ok"
         }
       ]
     },
