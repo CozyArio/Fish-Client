@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:nether_wart"
+          "value": "minecraft:sweet_berry_bush"
         },
         {
           "label": "Target Action",
@@ -278,7 +278,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:nether_wart"
+          "value": "minecraft:sweet_berry_bush"
         },
         {
           "label": "Target Action",
@@ -1539,7 +1539,7 @@
     },
     {
       "name": "GhostHand",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
@@ -1555,7 +1555,7 @@
         {
           "label": "Only Sneak",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "Use Key",
@@ -1565,7 +1565,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Idle"
+          "value": "Used 78 65 -367"
         }
       ]
     },
@@ -2322,7 +2322,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 8s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 5s | presence ok"
         }
       ]
     },
