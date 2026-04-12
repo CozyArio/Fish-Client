@@ -914,12 +914,12 @@
         {
           "label": "Lifetime ms",
           "type": "SLIDER",
-          "value": 2550.0
+          "value": 2870.0
         },
         {
           "label": "Radius",
           "type": "SLIDER",
-          "value": 0.65
+          "value": 0.6000000000000001
         },
         {
           "label": "Thickness",
@@ -954,7 +954,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Cute Pink | active: 1 | ttl: 2550ms"
+          "value": "style: Cute Pink | active: 0 | ttl: 2870ms"
         }
       ]
     },
@@ -2191,13 +2191,13 @@
     },
     {
       "name": "DSL",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
           "label": "Preset",
           "type": "SELECT",
-          "value": 0
+          "value": 2
         },
         {
           "label": "Intensity",
@@ -2217,12 +2217,12 @@
         {
           "label": "Scanlines",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "Flash",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "Wobble FOV",
@@ -2269,7 +2269,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 10s | presence ok"
+          "value": "online: 1 | sync: 1s | hb: 8s | presence ok"
         }
       ]
     },
