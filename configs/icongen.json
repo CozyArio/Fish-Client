@@ -954,7 +954,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Cute Pink | active: 0 | ttl: 2550ms"
+          "value": "style: Cute Pink | active: 1 | ttl: 2550ms"
         }
       ]
     },
@@ -1493,12 +1493,12 @@
         {
           "label": "Effects",
           "type": "TEXT",
-          "value": "minecraft:haste,minecraft:speed"
+          "value": ""
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Finished"
+          "value": "Select effects"
         }
       ]
     },
@@ -2269,7 +2269,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 1s | hb: 8s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 10s | presence ok"
         }
       ]
     },
