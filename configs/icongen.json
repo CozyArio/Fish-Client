@@ -171,7 +171,7 @@
     {
       "name": "Prison Layer Miner",
       "enabled": false,
-      "keybind": 86,
+      "keybind": 0,
       "settings": [
         {
           "label": "Pos1",
@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:wheat"
         },
         {
           "label": "Target Action",
@@ -278,7 +278,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:wheat"
         },
         {
           "label": "Target Action",
@@ -2269,7 +2269,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 11s | presence ok"
+          "value": "online: 1 | sync: 1s | hb: 8s | presence ok"
         }
       ]
     },
