@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:wheat"
+          "value": "minecraft:iron_block"
         },
         {
           "label": "Target Action",
@@ -278,7 +278,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:wheat"
+          "value": "minecraft:iron_block"
         },
         {
           "label": "Target Action",
@@ -426,6 +426,195 @@
           "label": "Path Status",
           "type": "TEXT",
           "value": "Off"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "Crop Eater",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 6.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 115.0
+        },
+        {
+          "label": "Crops Per Tick",
+          "type": "SLIDER",
+          "value": 4.0
+        },
+        {
+          "label": "Target Crop",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Mature Only",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Hoe",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Hold Attack",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Packet Safety",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Spinbot Synergy",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Spin Bonus %",
+          "type": "SLIDER",
+          "value": 35.0
+        },
+        {
+          "label": "Forward Speed",
+          "type": "SLIDER",
+          "value": 0.52
+        },
+        {
+          "label": "ZigZag Strafe",
+          "type": "SLIDER",
+          "value": 0.16
+        },
+        {
+          "label": "ZigZag Switch ms",
+          "type": "SLIDER",
+          "value": 320.0
+        },
+        {
+          "label": "Aim Lock",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Turn Speed",
+          "type": "SLIDER",
+          "value": 7.0
+        },
+        {
+          "label": "Auto Sprint",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Move Status",
+          "type": "TEXT",
+          "value": "Idle"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "AutoGen Upgrade",
+      "enabled": false,
+      "keybind": 73,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 6.0
+        },
+        {
+          "label": "Vertical Range",
+          "type": "SLIDER",
+          "value": 4.0
+        },
+        {
+          "label": "Delay ms",
+          "type": "SLIDER",
+          "value": 100.0
+        },
+        {
+          "label": "Clicks/Tick",
+          "type": "SLIDER",
+          "value": 4.0
+        },
+        {
+          "label": "Packet Safety",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Sneak Click",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Empty Hand",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Require Hold Use",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Require Hold Sneak",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Upgrade Hay Bale",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Upgrade Logs/Wood",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Upgrade Planks",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Upgrade Ores",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Upgrade Gem Blocks",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Upgrade Custom IDs",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Custom IDs",
+          "type": "TEXT",
+          "value": "cobblestone,stone,coal_block,iron_block,gold_block,diamond_block"
         },
         {
           "label": "Status",
@@ -905,11 +1094,6 @@
           "label": "Tool Cooldown ms",
           "type": "SLIDER",
           "value": 120.0
-        },
-        {
-          "label": "Depth",
-          "type": "TOGGLE",
-          "value": true
         },
         {
           "label": "Lifetime ms",
@@ -2020,137 +2204,6 @@
       ]
     },
     {
-      "name": "Chest Chams",
-      "enabled": false,
-      "keybind": 0,
-      "settings": [
-        {
-          "label": "Range",
-          "type": "SLIDER",
-          "value": 20.0
-        },
-        {
-          "label": "Color R",
-          "type": "SLIDER",
-          "value": 255.0
-        },
-        {
-          "label": "Color G",
-          "type": "SLIDER",
-          "value": 170.0
-        },
-        {
-          "label": "Color B",
-          "type": "SLIDER",
-          "value": 90.0
-        },
-        {
-          "label": "Opacity",
-          "type": "SLIDER",
-          "value": 62.0
-        },
-        {
-          "label": "Outline Alpha",
-          "type": "SLIDER",
-          "value": 220.0
-        }
-      ]
-    },
-    {
-      "name": "Player Chams",
-      "enabled": true,
-      "keybind": 0,
-      "settings": [
-        {
-          "label": "Range",
-          "type": "SLIDER",
-          "value": 90.0
-        },
-        {
-          "label": "Color R",
-          "type": "SLIDER",
-          "value": 255.0
-        },
-        {
-          "label": "Color G",
-          "type": "SLIDER",
-          "value": 251.0
-        },
-        {
-          "label": "Color B",
-          "type": "SLIDER",
-          "value": 0.0
-        },
-        {
-          "label": "Opacity",
-          "type": "SLIDER",
-          "value": 251.0
-        },
-        {
-          "label": "Outline Alpha",
-          "type": "SLIDER",
-          "value": 251.0
-        },
-        {
-          "label": "Line Width",
-          "type": "SLIDER",
-          "value": 3.5
-        }
-      ]
-    },
-    {
-      "name": "Mob Chams",
-      "enabled": false,
-      "keybind": 0,
-      "settings": [
-        {
-          "label": "Range",
-          "type": "SLIDER",
-          "value": 72.0
-        },
-        {
-          "label": "Target Hostile",
-          "type": "TOGGLE",
-          "value": true
-        },
-        {
-          "label": "Target Passive",
-          "type": "TOGGLE",
-          "value": true
-        },
-        {
-          "label": "Color R",
-          "type": "SLIDER",
-          "value": 255.0
-        },
-        {
-          "label": "Color G",
-          "type": "SLIDER",
-          "value": 100.0
-        },
-        {
-          "label": "Color B",
-          "type": "SLIDER",
-          "value": 120.0
-        },
-        {
-          "label": "Opacity",
-          "type": "SLIDER",
-          "value": 52.0
-        },
-        {
-          "label": "Outline Alpha",
-          "type": "SLIDER",
-          "value": 220.0
-        },
-        {
-          "label": "Line Width",
-          "type": "SLIDER",
-          "value": 1.25
-        }
-      ]
-    },
-    {
       "name": "FOV Changer",
       "enabled": false,
       "keybind": 0,
@@ -2191,7 +2244,7 @@
     },
     {
       "name": "DSL",
-      "enabled": true,
+      "enabled": false,
       "keybind": 0,
       "settings": [
         {
@@ -2269,7 +2322,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 1s | hb: 8s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 7s | presence ok"
         }
       ]
     },
@@ -2457,12 +2510,12 @@
           "value": 0
         },
         {
-          "label": "Include Ender",
+          "label": "Include Trapped Chest",
           "type": "TOGGLE",
           "value": true
         },
         {
-          "label": "Include Furnaces",
+          "label": "Include Ender Chest",
           "type": "TOGGLE",
           "value": true
         }
