@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:bedrock"
+          "value": "minecraft:magma_block"
         },
         {
           "label": "Target Action",
@@ -241,7 +241,7 @@
         {
           "label": "Target Mode",
           "type": "SELECT",
-          "value": 1
+          "value": 0
         },
         {
           "label": "Mine Mode",
@@ -266,7 +266,7 @@
         {
           "label": "Mine While Unfocused",
           "type": "TOGGLE",
-          "value": false
+          "value": true
         },
         {
           "label": "Status",
@@ -288,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:bedrock"
+          "value": "minecraft:magma_block"
         },
         {
           "label": "Target Action",
@@ -1322,7 +1322,7 @@
     },
     {
       "name": "Auto Unscrambler",
-      "enabled": true,
+      "enabled": false,
       "keybind": 0,
       "settings": [
         {
@@ -1349,7 +1349,7 @@
     },
     {
       "name": "Math Solver",
-      "enabled": true,
+      "enabled": false,
       "keybind": 0,
       "settings": [
         {
@@ -2394,7 +2394,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 0s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
         }
       ]
     },
