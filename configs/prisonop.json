@@ -170,13 +170,13 @@
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": true,
+      "enabled": false,
       "keybind": 88,
       "settings": [
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "-17 98 19"
+          "value": "985 98 980"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "-53 48 -17"
+          "value": "941 48 1024"
         },
         {
           "label": "Pos2 Action",
@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:bedrock"
         },
         {
           "label": "Target Action",
@@ -239,6 +239,11 @@
           "value": 80.0
         },
         {
+          "label": "Target Mode",
+          "type": "SELECT",
+          "value": 1
+        },
+        {
           "label": "Mine Mode",
           "type": "SELECT",
           "value": 0
@@ -259,9 +264,14 @@
           "value": false
         },
         {
+          "label": "Mine While Unfocused",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
           "label": "Status",
           "type": "TEXT",
-          "value": "Mining"
+          "value": "Off"
         }
       ]
     },
@@ -278,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:bedrock"
         },
         {
           "label": "Target Action",
@@ -2384,7 +2394,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 10s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 0s | presence ok"
         }
       ]
     },
