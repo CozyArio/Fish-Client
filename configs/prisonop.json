@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:magma_block"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -261,7 +261,7 @@
         {
           "label": "Loop Area",
           "type": "TOGGLE",
-          "value": false
+          "value": true
         },
         {
           "label": "Mine While Unfocused",
@@ -288,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:magma_block"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -1098,7 +1098,7 @@
         {
           "label": "Hoe Only",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "Tool Cooldown ms",
@@ -2394,7 +2394,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 3s | presence ok"
         }
       ]
     },
