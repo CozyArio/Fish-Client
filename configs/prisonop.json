@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "985 98 980"
+          "value": "1485 98 1476"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "941 48 1024"
+          "value": "1437 48 1524"
         },
         {
           "label": "Pos2 Action",
@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:nether_bricks"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -288,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:nether_bricks"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -778,6 +778,18 @@
       "settings": []
     },
     {
+      "name": "Safe Mode",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Off"
+        }
+      ]
+    },
+    {
       "name": "NoFall",
       "enabled": false,
       "keybind": 0,
@@ -1163,7 +1175,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Cute Pink | active: 5 | ttl: 2870ms"
+          "value": "style: Cute Pink | active: 0 | ttl: 2870ms"
         }
       ]
     },
@@ -2569,7 +2581,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 7s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 9s | presence ok"
         }
       ]
     },
