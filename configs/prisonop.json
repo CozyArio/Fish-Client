@@ -170,7 +170,7 @@
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": true,
+      "enabled": false,
       "keybind": 88,
       "settings": [
         {
@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:nether_bricks"
         },
         {
           "label": "Target Action",
@@ -271,7 +271,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Mining [Sweep]"
+          "value": "Off"
         }
       ]
     },
@@ -288,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:nether_bricks"
         },
         {
           "label": "Target Action",
@@ -1163,7 +1163,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Cute Pink | active: 18 | ttl: 2870ms"
+          "value": "style: Cute Pink | active: 5 | ttl: 2870ms"
         }
       ]
     },
@@ -2569,7 +2569,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 7s | presence ok"
         }
       ]
     },
