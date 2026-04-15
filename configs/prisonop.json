@@ -445,24 +445,24 @@
       ]
     },
     {
-      "name": "Crop Eater",
+      "name": "Crop Clicker",
       "enabled": false,
       "keybind": 0,
       "settings": [
         {
           "label": "Range",
           "type": "SLIDER",
-          "value": 7.0
+          "value": 6.0
         },
         {
           "label": "Delay ms",
           "type": "SLIDER",
-          "value": 50.0
+          "value": 115.0
         },
         {
           "label": "Crops Per Tick",
           "type": "SLIDER",
-          "value": 6.0
+          "value": 4.0
         },
         {
           "label": "Target Crop",
@@ -472,7 +472,7 @@
         {
           "label": "Mature Only",
           "type": "TOGGLE",
-          "value": false
+          "value": true
         },
         {
           "label": "Require Hoe",
@@ -492,7 +492,7 @@
         {
           "label": "Spinbot Synergy",
           "type": "TOGGLE",
-          "value": false
+          "value": true
         },
         {
           "label": "Spin Bonus %",
@@ -507,7 +507,7 @@
         {
           "label": "ZigZag Strafe",
           "type": "SLIDER",
-          "value": 0.28
+          "value": 0.16
         },
         {
           "label": "ZigZag Switch ms",
@@ -522,7 +522,7 @@
         {
           "label": "Turn Speed",
           "type": "SLIDER",
-          "value": 14.0
+          "value": 7.0
         },
         {
           "label": "Auto Sprint",
@@ -799,9 +799,24 @@
           "value": 12.0
         },
         {
-          "label": "Only Held",
+          "label": "Hold Left Click",
           "type": "TOGGLE",
           "value": true
+        },
+        {
+          "label": "Cooldown Mode",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Cooldown %",
+          "type": "SLIDER",
+          "value": 92.0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Disabled"
         }
       ]
     },
@@ -1195,6 +1210,16 @@
           "value": 300.0
         },
         {
+          "label": "Min Age ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Track Range",
+          "type": "SLIDER",
+          "value": 24.0
+        },
+        {
           "label": "Range",
           "type": "SLIDER",
           "value": 4.5
@@ -1205,14 +1230,149 @@
           "value": 0.35
         },
         {
+          "label": "FOV",
+          "type": "SLIDER",
+          "value": 170.0
+        },
+        {
+          "label": "Attack Delay ms",
+          "type": "SLIDER",
+          "value": 45.0
+        },
+        {
+          "label": "Sample Interval ms",
+          "type": "SLIDER",
+          "value": 18.0
+        },
+        {
+          "label": "Max Samples",
+          "type": "SLIDER",
+          "value": 120.0
+        },
+        {
           "label": "Trail Points",
           "type": "SLIDER",
           "value": 24.0
         },
         {
+          "label": "Trail Width",
+          "type": "SLIDER",
+          "value": 1.1
+        },
+        {
+          "label": "Trail Alpha %",
+          "type": "SLIDER",
+          "value": 80.0
+        },
+        {
+          "label": "Multi Targets",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "Lock Target ms",
+          "type": "SLIDER",
+          "value": 150.0
+        },
+        {
+          "label": "Predict ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Attack Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Priority",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Class Priority",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Color Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Trail Style",
+          "type": "SELECT",
+          "value": 2
+        },
+        {
+          "label": "Target Players",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Target Hostile",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Target Passive",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Treat Neutral As Hostile",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Ignore Invisible",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Ignore Babies",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Ignore Tamed",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Ignore Named Mobs",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Ignore Creative Players",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
           "label": "Render Trail",
           "type": "TOGGLE",
           "value": true
+        },
+        {
+          "label": "Render Ghost Box",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Render Current Box",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Render Prediction",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Rainbow Trail",
+          "type": "TOGGLE",
+          "value": false
         },
         {
           "label": "Hit Trail",
@@ -1223,6 +1383,21 @@
           "label": "Through Walls",
           "type": "TOGGLE",
           "value": false
+        },
+        {
+          "label": "Require Weapon",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Require Cooldown",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Cooldown %",
+          "type": "SLIDER",
+          "value": 84.0
         }
       ]
     },
@@ -2394,7 +2569,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 3s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 7s | presence ok"
         }
       ]
     },
