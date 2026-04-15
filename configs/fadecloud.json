@@ -170,7 +170,7 @@
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": true,
+      "enabled": false,
       "keybind": 88,
       "settings": [
         {
@@ -271,7 +271,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Mining [Sweep]"
+          "value": "Off"
         }
       ]
     },
@@ -1110,7 +1110,7 @@
         {
           "label": "Style",
           "type": "SELECT",
-          "value": 3
+          "value": 8
         },
         {
           "label": "Trigger On Hit",
@@ -1140,7 +1140,7 @@
         {
           "label": "Lifetime ms",
           "type": "SLIDER",
-          "value": 2870.0
+          "value": 1710.0
         },
         {
           "label": "Radius",
@@ -1150,17 +1150,17 @@
         {
           "label": "Thickness",
           "type": "SLIDER",
-          "value": 0.4
+          "value": 0.2
         },
         {
           "label": "Expand",
           "type": "SLIDER",
-          "value": 2.0
+          "value": 1.5
         },
         {
           "label": "Trippy %",
           "type": "SLIDER",
-          "value": 28.0
+          "value": 20.0
         },
         {
           "label": "Throw Scale",
@@ -1170,7 +1170,7 @@
         {
           "label": "Main Detail",
           "type": "SLIDER",
-          "value": 34.0
+          "value": 54.0
         },
         {
           "label": "Tube Detail",
@@ -1180,7 +1180,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Cute Pink | active: 8 | ttl: 2870ms"
+          "value": "style: Starfall | active: 0 | ttl: 1710ms"
         }
       ]
     },
@@ -2171,7 +2171,7 @@
         {
           "label": "Color Style",
           "type": "SELECT",
-          "value": 2
+          "value": 4
         },
         {
           "label": "Use Global Font",
@@ -2191,32 +2191,32 @@
         {
           "label": "Right Edge",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "X Offset",
           "type": "SLIDER",
-          "value": 9.0
+          "value": 5.0
         },
         {
           "label": "Y Offset",
           "type": "SLIDER",
-          "value": -7.0
+          "value": 9.0
         },
         {
           "label": "Background Alpha",
           "type": "SLIDER",
-          "value": 0.0
+          "value": 110.0
         },
         {
           "label": "Shadow Alpha",
           "type": "SLIDER",
-          "value": 1.0
+          "value": 2.0
         },
         {
           "label": "Border Alpha",
           "type": "SLIDER",
-          "value": 1.0
+          "value": 0.0
         },
         {
           "label": "Color R",
@@ -2586,7 +2586,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 11s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 3s | presence ok"
         }
       ]
     },
@@ -2890,7 +2890,7 @@
       ]
     },
     {
-      "name": "ClickGUI Style",
+      "name": "Fish Settings",
       "enabled": false,
       "keybind": 0,
       "settings": [
@@ -2915,7 +2915,7 @@
           "value": 3
         },
         {
-          "label": "ClickGUI Style",
+          "label": "Layout Style",
           "type": "SELECT",
           "value": 0
         },
@@ -2927,7 +2927,7 @@
         {
           "label": "Font Scale",
           "type": "SLIDER",
-          "value": 0.9500000000000001
+          "value": 1.0
         },
         {
           "label": "Click Sound",
