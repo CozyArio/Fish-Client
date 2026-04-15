@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:prismarine"
         },
         {
           "label": "Target Action",
@@ -288,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:prismarine"
         },
         {
           "label": "Target Action",
@@ -1066,6 +1066,11 @@
           "value": false
         },
         {
+          "label": "Target Selected Player Only",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
           "label": "Target Hostile",
           "type": "TOGGLE",
           "value": true
@@ -1509,7 +1514,7 @@
     },
     {
       "name": "Auto Unscrambler",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
@@ -1536,7 +1541,7 @@
     },
     {
       "name": "Math Solver",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
@@ -2169,7 +2174,7 @@
           "value": 2
         },
         {
-          "label": "Use Comfortaa Font",
+          "label": "Use Global Font",
           "type": "TOGGLE",
           "value": true
         },
@@ -2581,7 +2586,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 8s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 5s | presence ok"
         }
       ]
     },
@@ -2915,9 +2920,9 @@
           "value": 0
         },
         {
-          "label": "Use Comfortaa Font",
-          "type": "TOGGLE",
-          "value": true
+          "label": "Global Font",
+          "type": "SELECT",
+          "value": 1
         },
         {
           "label": "Font Scale",
