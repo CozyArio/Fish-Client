@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:prismarine"
         },
         {
           "label": "Target Action",
@@ -288,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:prismarine"
         },
         {
           "label": "Target Action",
@@ -1547,7 +1547,7 @@
         {
           "label": "Delay ms",
           "type": "SLIDER",
-          "value": 530.0
+          "value": 360.0
         },
         {
           "label": "Randomize ms",
@@ -1562,12 +1562,12 @@
         {
           "label": "Require Keyword",
           "type": "TOGGLE",
-          "value": false
+          "value": true
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Sent: 1 * 3 \u003d 3"
+          "value": "Sent: 4 * 9 \u003d 36"
         }
       ]
     },
@@ -2586,7 +2586,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 3s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
         }
       ]
     },
