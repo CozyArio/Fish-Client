@@ -170,7 +170,7 @@
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": false,
+      "enabled": true,
       "keybind": 88,
       "settings": [
         {
@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:prismarine"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -271,7 +271,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Off"
+          "value": "Mining [Sweep]"
         }
       ]
     },
@@ -288,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:prismarine"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -1547,7 +1547,7 @@
         {
           "label": "Delay ms",
           "type": "SLIDER",
-          "value": 320.0
+          "value": 1060.0
         },
         {
           "label": "Randomize ms",
@@ -1557,7 +1557,7 @@
         {
           "label": "Cooldown ms",
           "type": "SLIDER",
-          "value": 680.0
+          "value": 1280.0
         },
         {
           "label": "Require Keyword",
@@ -2586,7 +2586,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 5s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 0s | heartbeat ok"
         }
       ]
     },
@@ -2902,7 +2902,7 @@
         {
           "label": "Accent G",
           "type": "SLIDER",
-          "value": 71.0
+          "value": 87.0
         },
         {
           "label": "Accent B",
