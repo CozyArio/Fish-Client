@@ -170,7 +170,7 @@
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": false,
+      "enabled": true,
       "keybind": 88,
       "settings": [
         {
@@ -271,7 +271,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Off"
+          "value": "Mining [Sweep]"
         }
       ]
     },
@@ -646,12 +646,12 @@
         {
           "label": "Speed",
           "type": "SLIDER",
-          "value": 2.0
+          "value": 2.3000000000000003
         },
         {
           "label": "Vertical",
           "type": "SLIDER",
-          "value": 1.4000000000000001
+          "value": 1.6
         },
         {
           "label": "Glide",
@@ -661,7 +661,7 @@
         {
           "label": "Bypass",
           "type": "SELECT",
-          "value": 1
+          "value": 0
         }
       ]
     },
@@ -1163,7 +1163,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Cute Pink | active: 0 | ttl: 2870ms"
+          "value": "style: Cute Pink | active: 18 | ttl: 2870ms"
         }
       ]
     },
@@ -2569,7 +2569,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 7s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
         }
       ]
     },
