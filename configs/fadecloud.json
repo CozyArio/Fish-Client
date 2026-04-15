@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "1485 98 1476"
+          "value": "1982 98 2025"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "1437 48 1524"
+          "value": "1932 48 1975"
         },
         {
           "label": "Pos2 Action",
@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:prismarine"
+          "value": "minecraft:bedrock"
         },
         {
           "label": "Target Action",
@@ -288,7 +288,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:prismarine"
+          "value": "minecraft:bedrock"
         },
         {
           "label": "Target Action",
@@ -1514,13 +1514,13 @@
     },
     {
       "name": "Auto Unscrambler",
-      "enabled": true,
+      "enabled": false,
       "keybind": 0,
       "settings": [
         {
           "label": "Dictionary",
           "type": "SELECT",
-          "value": 1
+          "value": 0
         },
         {
           "label": "Delay ms",
@@ -1535,13 +1535,13 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Unknown: 1x3"
+          "value": "Idle"
         }
       ]
     },
     {
       "name": "Math Solver",
-      "enabled": true,
+      "enabled": false,
       "keybind": 0,
       "settings": [
         {
@@ -1567,7 +1567,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Sent: 4 * 9 \u003d 36"
+          "value": "Idle"
         }
       ]
     },
@@ -2586,7 +2586,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 6s | presence ok"
         }
       ]
     },
