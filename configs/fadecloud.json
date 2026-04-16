@@ -170,7 +170,7 @@
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": true,
+      "enabled": false,
       "keybind": 88,
       "settings": [
         {
@@ -192,6 +192,16 @@
           "label": "Pos2 Action",
           "type": "SELECT",
           "value": 0
+        },
+        {
+          "label": "Select Button",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Selection Lock",
+          "type": "TOGGLE",
+          "value": false
         },
         {
           "label": "Target Block",
@@ -216,7 +226,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:magenta_terracotta"
         },
         {
           "label": "Target Action",
@@ -276,7 +286,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Mining [Sweep]"
+          "value": "Off"
         }
       ]
     },
@@ -293,7 +303,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:magenta_terracotta"
         },
         {
           "label": "Target Action",
@@ -2160,6 +2170,11 @@
           "label": "Show Radio Tag",
           "type": "TOGGLE",
           "value": true
+        },
+        {
+          "label": "Show Prison Tag",
+          "type": "TOGGLE",
+          "value": true
         }
       ]
     },
@@ -2591,7 +2606,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 5s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 10s | presence ok"
         }
       ]
     },
