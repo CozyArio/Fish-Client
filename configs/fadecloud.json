@@ -226,7 +226,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:yellow_glazed_terracotta"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -303,7 +303,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:yellow_glazed_terracotta"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -1550,7 +1550,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Sent: Tube Carol"
+          "value": "Sent: Trial Spawner"
         }
       ]
     },
@@ -1940,7 +1940,7 @@
         {
           "label": "Currency",
           "type": "TEXT",
-          "value": ""
+          "value": "orbs"
         },
         {
           "label": "Command Template",
@@ -2606,7 +2606,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 1s | presence ok"
         }
       ]
     },
