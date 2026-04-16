@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "1982 98 2025"
+          "value": "2483 98 2475"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "1932 48 1975"
+          "value": "2431 48 2527"
         },
         {
           "label": "Pos2 Action",
@@ -216,7 +216,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:bedrock"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -242,6 +242,11 @@
           "label": "Target Mode",
           "type": "SELECT",
           "value": 0
+        },
+        {
+          "label": "Circle Radius",
+          "type": "SLIDER",
+          "value": 5.0
         },
         {
           "label": "Mine Mode",
@@ -288,7 +293,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:bedrock"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -2586,7 +2591,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 6s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 10s | presence ok"
         }
       ]
     },
