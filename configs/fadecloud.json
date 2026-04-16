@@ -86,13 +86,13 @@
     },
     {
       "name": "FastMine",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
           "label": "Speed",
           "type": "SLIDER",
-          "value": 8.0
+          "value": 10.0
         },
         {
           "label": "Mode",
@@ -159,12 +159,12 @@
         {
           "label": "Selected Blocks",
           "type": "TEXT",
-          "value": "1"
+          "value": "16"
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Added: -19 158 -19"
+          "value": "Added: 2926 48 2974"
         }
       ]
     },
@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "2483 98 2475"
+          "value": "2982 98 3031"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "2431 48 2527"
+          "value": "2926 48 2974"
         },
         {
           "label": "Pos2 Action",
@@ -226,7 +226,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:magenta_terracotta"
+          "value": "minecraft:yellow_glazed_terracotta"
         },
         {
           "label": "Target Action",
@@ -251,7 +251,7 @@
         {
           "label": "Target Mode",
           "type": "SELECT",
-          "value": 0
+          "value": 2
         },
         {
           "label": "Circle Radius",
@@ -303,7 +303,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:magenta_terracotta"
+          "value": "minecraft:yellow_glazed_terracotta"
         },
         {
           "label": "Target Action",
@@ -1550,7 +1550,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Idle"
+          "value": "Sent: Tube Carol"
         }
       ]
     },
@@ -1582,7 +1582,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Idle"
+          "value": "Round ended"
         }
       ]
     },
@@ -2606,7 +2606,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 10s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 4s | presence ok"
         }
       ]
     },
