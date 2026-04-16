@@ -170,7 +170,7 @@
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": false,
+      "enabled": true,
       "keybind": 88,
       "settings": [
         {
@@ -276,7 +276,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Off"
+          "value": "Mining [Sweep]"
         }
       ]
     },
@@ -1519,18 +1519,18 @@
     },
     {
       "name": "Auto Unscrambler",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
           "label": "Dictionary",
           "type": "SELECT",
-          "value": 0
+          "value": 2
         },
         {
           "label": "Delay ms",
           "type": "SLIDER",
-          "value": 420.0
+          "value": 290.0
         },
         {
           "label": "Randomize ms",
@@ -1546,13 +1546,13 @@
     },
     {
       "name": "Math Solver",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
           "label": "Delay ms",
           "type": "SLIDER",
-          "value": 360.0
+          "value": 310.0
         },
         {
           "label": "Randomize ms",
@@ -1567,7 +1567,7 @@
         {
           "label": "Require Keyword",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "Status",
@@ -2591,7 +2591,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 10s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 5s | presence ok"
         }
       ]
     },
