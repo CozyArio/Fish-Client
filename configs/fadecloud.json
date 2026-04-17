@@ -159,12 +159,12 @@
         {
           "label": "Selected Blocks",
           "type": "TEXT",
-          "value": "16"
+          "value": "2"
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Added: 2926 48 2974"
+          "value": "Added: 3481 48 3531"
         }
       ]
     },
@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "2982 98 3031"
+          "value": "3425 98 3475"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "2926 48 2974"
+          "value": "3481 48 3531"
         },
         {
           "label": "Pos2 Action",
@@ -226,7 +226,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:light"
         },
         {
           "label": "Target Action",
@@ -303,7 +303,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:light"
         },
         {
           "label": "Target Action",
@@ -2606,7 +2606,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 1s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 5s | presence ok"
         }
       ]
     },
