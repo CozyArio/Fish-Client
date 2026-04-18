@@ -159,24 +159,24 @@
         {
           "label": "Selected Blocks",
           "type": "TEXT",
-          "value": "2"
+          "value": "10"
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Added: 3481 48 3531"
+          "value": "Added: 940 48 1025"
         }
       ]
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": false,
+      "enabled": true,
       "keybind": 88,
       "settings": [
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "3425 98 3475"
+          "value": "987 98 979"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "3481 48 3531"
+          "value": "940 48 1025"
         },
         {
           "label": "Pos2 Action",
@@ -226,7 +226,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:light"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -286,7 +286,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Off"
+          "value": "Mining [Circle 5.0]"
         }
       ]
     },
@@ -303,7 +303,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:light"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -650,7 +650,7 @@
     },
     {
       "name": "Wings",
-      "enabled": false,
+      "enabled": true,
       "keybind": 70,
       "settings": [
         {
@@ -1195,7 +1195,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Starfall | active: 0 | ttl: 1710ms"
+          "value": "style: Starfall | active: 11 | ttl: 1710ms"
         }
       ]
     },
@@ -1529,7 +1529,7 @@
     },
     {
       "name": "Auto Unscrambler",
-      "enabled": true,
+      "enabled": false,
       "keybind": 0,
       "settings": [
         {
@@ -1550,13 +1550,13 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Sent: Trial Spawner"
+          "value": "Idle"
         }
       ]
     },
     {
       "name": "Math Solver",
-      "enabled": true,
+      "enabled": false,
       "keybind": 0,
       "settings": [
         {
@@ -1582,7 +1582,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Round ended"
+          "value": "Idle"
         }
       ]
     },
@@ -2606,7 +2606,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 5s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 12s | presence ok"
         }
       ]
     },
