@@ -159,12 +159,12 @@
         {
           "label": "Selected Blocks",
           "type": "TEXT",
-          "value": "1"
+          "value": "2"
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Added: 21 55 23"
+          "value": "Added: 37 1 37"
         }
       ]
     },
@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "21 55 23"
+          "value": "-38 69 -38"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "-33 1 -33"
+          "value": "37 1 37"
         },
         {
           "label": "Pos2 Action",
@@ -202,6 +202,11 @@
           "label": "Selection Lock",
           "type": "TOGGLE",
           "value": false
+        },
+        {
+          "label": "Selection Step",
+          "type": "TEXT",
+          "value": "POS1+POS2 SET | SEL POS 1"
         },
         {
           "label": "Target Block",
@@ -226,7 +231,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:end_stone"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -303,7 +308,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:end_stone"
+          "value": ""
         },
         {
           "label": "Target Action",
@@ -770,7 +775,7 @@
       ]
     },
     {
-      "name": "BlockSpeed",
+      "name": "ZuhnMode",
       "enabled": true,
       "keybind": 0,
       "settings": [
@@ -782,17 +787,32 @@
         {
           "label": "Base Speed",
           "type": "SLIDER",
-          "value": 0.46
+          "value": 0.5
         },
         {
           "label": "Accel %",
           "type": "SLIDER",
-          "value": 50.0
+          "value": 70.0
         },
         {
           "label": "Air Control",
           "type": "SLIDER",
           "value": 1.0
+        },
+        {
+          "label": "Air Strafe",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Air Strafe %",
+          "type": "SLIDER",
+          "value": 100.0
+        },
+        {
+          "label": "Air Speed Cap",
+          "type": "SLIDER",
+          "value": 2.5
         },
         {
           "label": "Edge Probe",
@@ -811,6 +831,78 @@
         },
         {
           "label": "Auto Sprint",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Feedback",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Popup",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Sounds",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Min Feedback",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Feedback Cooldown ms",
+          "type": "SLIDER",
+          "value": 3300.0
+        },
+        {
+          "label": "Sound Volume %",
+          "type": "SLIDER",
+          "value": 42.0
+        },
+        {
+          "label": "Popup ms",
+          "type": "SLIDER",
+          "value": 1350.0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "Invmove",
+      "enabled": false,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Move In Chat",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Containers Only",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Jump",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Sneak",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Sprint",
           "type": "TOGGLE",
           "value": true
         },
@@ -1299,7 +1391,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Starfall | active: 0 | ttl: 1710ms"
+          "value": "style: Starfall | active: 11 | ttl: 1710ms"
         }
       ]
     },
@@ -2276,7 +2368,7 @@
           "value": true
         },
         {
-          "label": "Show Prison Tag",
+          "label": "Show Prison Select Tag",
           "type": "TOGGLE",
           "value": true
         }
@@ -2710,7 +2802,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 1s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 2s | presence ok"
         }
       ]
     },
