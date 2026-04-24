@@ -3,7 +3,7 @@
     {
       "name": "Nuker",
       "enabled": false,
-      "keybind": 90,
+      "keybind": 0,
       "settings": [
         {
           "label": "Range",
@@ -159,24 +159,24 @@
         {
           "label": "Selected Blocks",
           "type": "TEXT",
-          "value": "2"
+          "value": "1"
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Added: -33 1 -33"
+          "value": "Added: 21 55 23"
         }
       ]
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": false,
+      "enabled": true,
       "keybind": 88,
       "settings": [
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "33 69 34"
+          "value": "21 55 23"
         },
         {
           "label": "Pos1 Action",
@@ -226,7 +226,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:netherrack"
+          "value": "minecraft:end_stone"
         },
         {
           "label": "Target Action",
@@ -286,7 +286,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Off"
+          "value": "Mining [Sweep]"
         }
       ]
     },
@@ -303,7 +303,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": "minecraft:netherrack"
+          "value": "minecraft:end_stone"
         },
         {
           "label": "Target Action",
@@ -714,6 +714,110 @@
           "label": "Packet Boost",
           "type": "TOGGLE",
           "value": false
+        }
+      ]
+    },
+    {
+      "name": "Teleport",
+      "enabled": false,
+      "keybind": 90,
+      "settings": [
+        {
+          "label": "Direction",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Blocks",
+          "type": "SLIDER",
+          "value": 70.0
+        },
+        {
+          "label": "Step/Tick",
+          "type": "SLIDER",
+          "value": 1.05
+        },
+        {
+          "label": "Cooldown ms",
+          "type": "SLIDER",
+          "value": 0.0
+        },
+        {
+          "label": "Require Sneak",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Packet Sync",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Auto Disable",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
+        }
+      ]
+    },
+    {
+      "name": "BlockSpeed",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Speed Multiplier",
+          "type": "SLIDER",
+          "value": 3.4000000000000004
+        },
+        {
+          "label": "Base Speed",
+          "type": "SLIDER",
+          "value": 0.46
+        },
+        {
+          "label": "Accel %",
+          "type": "SLIDER",
+          "value": 50.0
+        },
+        {
+          "label": "Air Control",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "Edge Probe",
+          "type": "SLIDER",
+          "value": 0.45
+        },
+        {
+          "label": "Edge Stop",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Only Sprinting",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Auto Sprint",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Idle"
         }
       ]
     },
@@ -2917,12 +3021,12 @@
         {
           "label": "Accent R",
           "type": "SLIDER",
-          "value": 116.0
+          "value": 227.0
         },
         {
           "label": "Accent G",
           "type": "SLIDER",
-          "value": 87.0
+          "value": 181.0
         },
         {
           "label": "Accent B",
@@ -2932,7 +3036,7 @@
         {
           "label": "Use Hex Colors",
           "type": "TOGGLE",
-          "value": true
+          "value": false
         },
         {
           "label": "Accent Hex",
