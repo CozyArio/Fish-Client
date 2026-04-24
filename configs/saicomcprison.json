@@ -159,12 +159,12 @@
         {
           "label": "Selected Blocks",
           "type": "TEXT",
-          "value": "4"
+          "value": "2"
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Added: -7 1 7"
+          "value": "Added: -33 1 -33"
         }
       ]
     },
@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "8 69 -7"
+          "value": "33 69 34"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "-7 1 7"
+          "value": "-33 1 -33"
         },
         {
           "label": "Pos2 Action",
@@ -226,7 +226,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:netherrack"
         },
         {
           "label": "Target Action",
@@ -303,7 +303,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:netherrack"
         },
         {
           "label": "Target Action",
@@ -2606,7 +2606,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 9s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 1s | presence ok"
         }
       ]
     },
@@ -2928,6 +2928,31 @@
           "label": "Accent B",
           "type": "SLIDER",
           "value": 255.0
+        },
+        {
+          "label": "Use Hex Colors",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Accent Hex",
+          "type": "TEXT",
+          "value": "#5BCEFA"
+        },
+        {
+          "label": "Use Fade Color",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Fade Hex",
+          "type": "TEXT",
+          "value": "#F5A9B8"
+        },
+        {
+          "label": "Fade Mix %",
+          "type": "SLIDER",
+          "value": 55.0
         },
         {
           "label": "GUI STYLE",
