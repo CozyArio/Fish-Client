@@ -170,7 +170,7 @@
     },
     {
       "name": "Prison Layer Miner",
-      "enabled": true,
+      "enabled": false,
       "keybind": 88,
       "settings": [
         {
@@ -206,7 +206,7 @@
         {
           "label": "Selection Step",
           "type": "TEXT",
-          "value": "POS1+POS2 SET | SEL POS 1"
+          "value": "SEL POS 1"
         },
         {
           "label": "Target Block",
@@ -291,7 +291,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Mining [Sweep]"
+          "value": "Off"
         }
       ]
     },
@@ -1391,7 +1391,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "style: Starfall | active: 11 | ttl: 1710ms"
+          "value": "style: Starfall | active: 0 | ttl: 1710ms"
         }
       ]
     },
@@ -2802,7 +2802,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 2s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 3s | presence ok"
         }
       ]
     },
