@@ -164,7 +164,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Added: 37 1 37"
+          "value": "Added: 49 1 -49"
         }
       ]
     },
@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "-38 69 -38"
+          "value": "-50 69 49"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "37 1 37"
+          "value": "49 1 -49"
         },
         {
           "label": "Pos2 Action",
@@ -206,7 +206,7 @@
         {
           "label": "Selection Step",
           "type": "TEXT",
-          "value": "SEL POS 1"
+          "value": "POS1+POS2 SET | SEL POS 1"
         },
         {
           "label": "Target Block",
@@ -231,7 +231,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:light_blue_concrete"
         },
         {
           "label": "Target Action",
@@ -308,7 +308,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:light_blue_concrete"
         },
         {
           "label": "Target Action",
@@ -2802,7 +2802,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 3s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 7s | presence ok"
         }
       ]
     },
