@@ -164,7 +164,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Removed: 449 -31 750"
+          "value": "Added: 403 -31 750"
         }
       ]
     },
@@ -176,7 +176,7 @@
         {
           "label": "Pos1",
           "type": "TEXT",
-          "value": "401 119 798"
+          "value": "450 119 798"
         },
         {
           "label": "Pos1 Action",
@@ -186,7 +186,7 @@
         {
           "label": "Pos2",
           "type": "TEXT",
-          "value": "449 -31 750"
+          "value": "403 -31 750"
         },
         {
           "label": "Pos2 Action",
@@ -231,7 +231,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:calcite"
         },
         {
           "label": "Target Action",
@@ -313,7 +313,7 @@
         {
           "label": "Looking At",
           "type": "TEXT",
-          "value": ""
+          "value": "minecraft:calcite"
         },
         {
           "label": "Target Action",
@@ -1426,6 +1426,16 @@
           "value": false
         },
         {
+          "label": "Wired Glyphs",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Wired Decay Lines",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
           "label": "Tool Cooldown ms",
           "type": "SLIDER",
           "value": 120.0
@@ -2326,7 +2336,7 @@
     },
     {
       "name": "AutoSell",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
@@ -2342,12 +2352,12 @@
         {
           "label": "Once Per Full",
           "type": "TOGGLE",
-          "value": false
+          "value": true
         },
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "Idle"
+          "value": "Waiting full inv"
         }
       ]
     },
@@ -2451,6 +2461,16 @@
         },
         {
           "label": "Show Prison Select Tag",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Show Prison Miner Panel",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Show Prison Waveform",
           "type": "TOGGLE",
           "value": true
         }
@@ -2720,7 +2740,7 @@
     },
     {
       "name": "Dropped Items ESP",
-      "enabled": false,
+      "enabled": true,
       "keybind": 0,
       "settings": [
         {
@@ -2730,6 +2750,46 @@
         },
         {
           "label": "Through Walls",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Mode",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Draw Style",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Name Filter",
+          "type": "TEXT",
+          "value": ""
+        },
+        {
+          "label": "Min Stack",
+          "type": "SLIDER",
+          "value": 1.0
+        },
+        {
+          "label": "Only Named/Enchanted",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Tracers",
+          "type": "TOGGLE",
+          "value": false
+        },
+        {
+          "label": "Pulse",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Stack Nodes",
           "type": "TOGGLE",
           "value": true
         },
@@ -2751,17 +2811,114 @@
         {
           "label": "Opacity",
           "type": "SLIDER",
-          "value": 78.0
+          "value": 253.0
         },
         {
           "label": "Outline Alpha",
           "type": "SLIDER",
-          "value": 220.0
+          "value": 252.0
         },
         {
           "label": "Line Width",
           "type": "SLIDER",
           "value": 1.0
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Found 57 | nearest Block of Redstone 3m"
+        }
+      ]
+    },
+    {
+      "name": "NPC Finder",
+      "enabled": true,
+      "keybind": 0,
+      "settings": [
+        {
+          "label": "Range",
+          "type": "SLIDER",
+          "value": 160.0
+        },
+        {
+          "label": "Max Results",
+          "type": "SLIDER",
+          "value": 48.0
+        },
+        {
+          "label": "Name Filter",
+          "type": "TEXT",
+          "value": ""
+        },
+        {
+          "label": "Include ArmorStands",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Include Player NPCs",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Include Villagers",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Include Named Mobs",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Include Displays",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Show All ESP",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Show Tracer",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "HUD Arrow",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Through Walls",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Selected NPC",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Action",
+          "type": "SELECT",
+          "value": 0
+        },
+        {
+          "label": "Found",
+          "type": "TEXT",
+          "value": "2 in 160 blocks"
+        },
+        {
+          "label": "Target",
+          "type": "TEXT",
+          "value": "Player / 36m"
+        },
+        {
+          "label": "Status",
+          "type": "TEXT",
+          "value": "Showing Player"
         }
       ]
     },
@@ -2884,7 +3041,7 @@
         {
           "label": "Status",
           "type": "TEXT",
-          "value": "online: 1 | sync: 0s | hb: 1s | presence ok"
+          "value": "online: 1 | sync: 0s | hb: 9s | presence ok"
         }
       ]
     },
@@ -3241,6 +3398,26 @@
           "label": "Layout Style",
           "type": "SELECT",
           "value": 0
+        },
+        {
+          "label": "CRT Overlay",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "CRT Noise",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Wired Corners",
+          "type": "TOGGLE",
+          "value": true
+        },
+        {
+          "label": "Resizable GUI",
+          "type": "TOGGLE",
+          "value": true
         },
         {
           "label": "Global Font",
